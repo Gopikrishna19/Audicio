@@ -4,40 +4,27 @@
         <div class="form">
             <form class="login">
                 <div class="title">Log In</div>
-                <input class="txt" type="text" placeholder="Username">
-                <input class="txt" type="password" placeholder="Password">
+                <input class="txt uname" type="text" placeholder="Username" autofocus="true">
+                <input class="txt upass" type="password" placeholder="Password">
+                <div class="lbtn gp log"></div>
+                <div class="lbtn fb log"></div>
                 <span class="reg link">Register</span>
                 <input class="btn" type="submit" value="Log In">
+                <div class="link forgot">Forgot username or password</div>
             </form>
-
             <form class="register">
                 <div class="title">Register</div>
-                <input class="txt" type="text" placeholder="Email">
-                <input class="txt" type="password" placeholder="Password">
-                <input class="txt" type="password" placeholder="Confirm">
+                <input class="txt email" type="text" placeholder="Email">
+                <input class="txt upass" type="password" placeholder="Password">
+                <input class="txt cpass" type="password" placeholder="Confirm">
+                <div class="lbtn gp reg"></div>
+                <div class="lbtn fb reg"></div>
                 <span class="log link">Log In</span>
                 <input class="btn" type="submit" value="Register">
             </form>
         </div>
     </div>
     <script>
-        $(function () {
-            $(".link.reg").click(function () {
-                $("form").addClass("alt");
-                setTimeout(function () {
-                    $(".login").css({ "z-index": "0" });
-                    $(".register").css({ "z-index": "1" });
-                }, 300);
-            });
-            $(".link.log").click(function () {
-                $("form").removeClass("alt");
-                setTimeout(function () {
-                    $(".login").css({ "z-index": "1" });
-                    $(".register").css({ "z-index": "0" });
-                }, 300);
-            });
-            $("form").submit(false);
-        })
     </script>
 </div>
 <div class="h1"></div>
