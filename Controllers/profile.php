@@ -5,7 +5,10 @@
         }
 
         public function index() {
-            // if init == 0 call init()
+            $this->view->css[] = "profile-index";
+            $this->view->js[] = "angular";
+            $this->view->js[] = "angular-route";
+            $this->view->js[] = "profile-index";
             $this->view->renderView(__CLASS__, __FUNCTION__);
         }
 
