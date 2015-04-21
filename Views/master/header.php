@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require_once "includes.php"; ?>
     </head>
-    <body>        
+    <body ng-app="audicio">

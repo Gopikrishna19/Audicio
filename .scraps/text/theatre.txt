@@ -1,0 +1,34 @@
+pre production
+ Producer
+ Director
+ Screen writer
+ Scenic designer
+ Lighting designer
+ Costume designer
+ Sound designer
+ Property master
+ Production manager
+ Technical Director
+ Carpenter
+production
+ Actor
+tech
+ Electrician
+ Stage Manager
+ Theatrical technician
+ Technical Director
+staff
+ Artistic director
+ General manager
+ Director of Production
+ Technical Director
+ Costume Director
+ Marketing Director
+ Director of Public Relations
+ Director of Audience Services
+ Director of development
+ Director of Special Events
+ Literary Manager
+ Company manager
+ House manager
+ Ticketing Agent

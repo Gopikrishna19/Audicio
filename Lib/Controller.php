@@ -13,7 +13,6 @@
                 require $file;
                 $this->model = new $class();
             }
-
         }
     }
 ?>

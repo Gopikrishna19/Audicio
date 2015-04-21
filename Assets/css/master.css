@@ -1,8 +1,14 @@
-﻿html,
-body {
-  height: 100%;
-  width: 100%;
-}
+﻿/*Bluish Green*/
+/*Yellowish Red*/
+/*Yellow*/
+/*Red*/
+/*Green*/
+/*Blue*/
+/*Violet*/
+/*Indigo*/
+/*Grey*/
+/*Light Grey*/
+/*Pure*/
 * {
   padding: 0;
   margin: 0;
@@ -14,5 +20,19 @@ body {
   border: none;
   background: none;
   font-family: sans-serif;
+}
+.h1 {
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  background-color: #3498db;
+  box-shadow: 0 0 7px #bdc3c7;
+  top: 0;
+}
+body {
+  background-color: #fbfcfc;
+}
+.body {
+  min-height: 100%;
 }
 /*# sourceMappingURL=master.css.map */

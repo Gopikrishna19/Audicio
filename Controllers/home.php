@@ -7,7 +7,7 @@
         public function index() {
             $this->view->css[] = "home";
             $this->view->js[] = "home";
-            $this->view->renderView(__CLASS__, __FUNCTION__);            
+            $this->view->renderView(__CLASS__, __FUNCTION__);
         }
     }
 ?>

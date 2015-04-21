@@ -1,0 +1,22 @@
+general
+ Engineer
+ Organizer
+ Director
+ Producer
+ Instructor
+instrument
+ Percussion
+ Brass
+ Wind
+ String
+ Keyboard/Piano
+song
+ Composer
+ Singer
+ Writer
+public
+ Critic
+ Librarian
+ Publisher
+ Promoter
+ visualizer

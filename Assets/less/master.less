@@ -1,7 +1,4 @@
-﻿html, body {
-    height: 100%;
-    width: 100%;
-}
+﻿@import "palette.less";
 
 * {
     padding: 0;
@@ -14,4 +11,24 @@
     border: none;
     background: none;
     font-family: sans-serif;
+}
+
+@head-height: 65px;
+@head-margin: 0;
+
+.h1 {
+    width: 100%;
+    height: @head-height;
+    position: absolute;    
+    background-color: @CBPeterRiver;
+    box-shadow: 0 0 7px @CLSilver;
+    top: @head-margin;
+}
+
+body {
+    background-color: lighten(@CLClouds, 5%);
+}
+
+.body {
+    min-height: 100%;
 }

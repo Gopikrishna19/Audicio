@@ -1,0 +1,88 @@
+﻿@import "palette.less";
+
+body {
+    padding: 25px;
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 12px;
+    }
+
+
+    h1 + p {
+        margin-bottom: 25px;
+    }
+
+    .title {
+        border-bottom: 1px solid @CLClouds;
+        font-weight: bold;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        max-height: 40px;
+        font-size: 18px;
+
+        span {
+            border-bottom: 1px solid @CPBlack;
+            padding: 9px 0;
+        }
+    }
+
+    .block {
+        padding-left: 12px;
+
+        .sub-title {
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .entries {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+
+            .col {
+                width: 100%;
+                margin-bottom: 25px;
+
+                @media screen {
+                    @media (min-width: 599px) {
+                        width: 50%;
+                    }
+                    @media (min-width: 899px) {
+                        width: 33.33%;
+                    }
+                    @media (min-width: 1199px) {
+                        width: 25%;
+                    }
+                }
+
+                .item {                    
+                    background-color: #FFF;
+                    padding: 12px 12px 12px 40px;
+                    -moz-transition: color .2s, background .2s;
+                    -o-transition: color .2s, background .2s;
+                    -webkit-transition: color .2s, background .2s;
+                    transition: color .2s, background .2s;
+                    box-shadow: 0 1px 3px @CLSilver;
+                    cursor: pointer;
+                    width: 95%;
+                    margin: auto;
+
+                    &:hover {
+                        box-shadow: 0 2px 4px @CLSilver;
+                    }
+
+                    &.mark {
+                        background-color: @CBPeterRiver;
+                        background-image: url(../img/tick.png);
+                        background-repeat: no-repeat;
+                        background-position: 8px center;
+                        background-size: 24px 24px;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+}

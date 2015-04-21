@@ -1,0 +1,12 @@
+general
+ author
+ screenwriter
+ critic
+ coordinator
+ editor
+ poet
+ consultant
+ technical writer
+ linguist
+ 
+ 

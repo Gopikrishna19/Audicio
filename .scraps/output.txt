@@ -1,0 +1,148 @@
+general
+ artisan
+ director
+ instructor
+ consultant
+animation
+ animator
+ director
+fashion
+ designer
+ makeup-artist
+ model 
+decor
+ production designer
+ set decorator
+ set dressergeneral
+ choreographer
+ dancer
+ critic
+general
+ Engineer
+ Organizer
+ Director
+ Producer
+ Instructor
+instrument
+ Percussion
+ Brass
+ Wind
+ String
+ Keyboard/Piano
+song
+ Composer
+ Singer
+ Writer
+public
+ Usher
+ Critic
+ Librarian
+ Publisher
+ Promoter
+ visualizergeneral
+ artisan
+ director
+ instructor
+ consultant
+ barker
+ model
+animation
+ animator
+ director
+fashion
+ designer
+ makeup-artist
+ model 
+decor
+ production designer
+ set decorator
+ set dressergeneral
+dance
+ choreographer
+ dancer
+ critic
+general
+ Engineer
+ Organizer
+ Director
+ Producer
+ Instructor
+ Jockey
+instrument
+ Percussion
+ Brass
+ Wind
+ String
+ Keyboard/Piano
+song
+ Composer
+ Singer
+ Writer
+public
+ Critic
+ Librarian
+ Publisher
+ Promoter
+ visualizer
+general
+ line producer
+ author
+ screenwriter
+ critic
+ coordinator
+ editor
+ poet
+ consultant
+ technical writer
+ linguist
+general
+ pre production
+ Producer
+ Director
+ Screen writer
+ Scenic designer
+ Lighting designer
+ Costume designer
+ Sound designer
+ Property master
+ Production manager
+ Production assistant
+ Technical Director
+ Carpenter
+production
+ Actor
+ Illusionist
+ Archimime
+ Crowd entertainer
+stunt
+ coordinator
+ performer
+tech
+ Electrician
+ Stage Manager
+ Theatrical technician
+ Technical Director
+staff
+ Artistic director
+ General manager
+ Director of Production
+ Technical Director
+ Costume Director
+ Marketing Director
+ Director of Public Relations
+ Director of Audience Services
+ Director of development
+ Director of Special Events
+ Literary Manager
+ Company manager
+ House manager
+ Ticketing Agent
+talent
+ agent
+ manager
+film
+ director
+ producer
+other
+ pyrotechnician
+ location manager

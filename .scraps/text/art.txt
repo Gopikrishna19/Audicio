@@ -1,0 +1,16 @@
+general
+ artisan
+ director
+ instructor
+ consultant
+animation
+ animator
+ director
+fashion
+ designer
+ makeup-artist
+ model 
+decor
+ production designer
+ set decorator
+ set dresser

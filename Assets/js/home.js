@@ -58,7 +58,7 @@ var lGoogle = {
             fjs.parentNode.insertBefore(js, fjs);
         } (document, 'script', 'gapi-js'));
     }
-}
+};
 
 var lFacebook = {
     clientid: '863440873728460',
@@ -102,7 +102,7 @@ var lFacebook = {
             fjs.parentNode.insertBefore(js, fjs);
         } (document, 'script', 'fapi-js'));
     }
-}
+};
 
 function initAPIs() {
     lGoogle.init();
@@ -110,5 +110,5 @@ function initAPIs() {
 }
 
 function redirect(email) {
-    window.location.href = '/profile?email=' + email;
+    window.location.href = '/profile';
 }
