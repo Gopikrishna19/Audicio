@@ -1,1 +1,201 @@
-﻿
+﻿@import "palette.less";
+
+.center-it() {
+    max-width: 1000px;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    margin-bottom: 25px;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+    .content {
+        .center-it();
+        overflow: auto;
+        padding: 25px;
+        background-color: @CPWhite;
+        position: relative;
+        box-shadow: 0 0 5px @CLSilver;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+
+        .img {
+            height: 200px;
+            width: 200px;
+            float: left;
+            border: 3px solid white;
+            box-shadow: 0 0 5px #DDD;
+            background-color: aliceblue;
+            margin-right: 25px;
+            position: relative;
+            z-index: 2;
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .name {
+            margin-top: 25px;
+            font-size: 32px;
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .menu-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding-right: 25px;
+            border-top: 1px solid @CLClouds;
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+            .menu {
+                background-color: @CLClouds;
+                float: right;
+                -moz-transition: all .3s;
+                -o-transition: all .3s;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+
+                li {
+                    background-color: @CPWhite;
+                    float: left;
+                    text-align: center;
+                    margin-left: 2px;
+                    -moz-transition: all .3s;
+                    -o-transition: all .3s;
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+
+                    a {
+                        display: block;
+                        padding: 12px;
+                        width: 100px;
+                        color: @CGrConcrete;
+                        -moz-transition: all .2s;
+                        -o-transition: all .2s;
+                        -webkit-transition: all .2s;
+                        transition: all .2s;
+                        border-bottom: 3px solid transparent;
+                        text-transform: capitalize;
+
+                        &:hover {
+                            box-shadow: 0 0 5px @CGrConcrete;
+                            color: @CPBlack;
+                        }
+
+                        &.active {
+                            border-bottom-color: @CBPeterRiver;
+                        }
+                    }
+
+                    &:first-child {
+                        margin: 0;
+                    }
+
+                    &:hover {
+                        position: relative;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    &.min {
+        background-color: @CBPeterRiver;
+
+        .content {
+            padding: 5px 25px;
+            background-color: transparent;
+            box-shadow: none;
+
+            .img {
+                height: 40px;
+                width: 40px;
+                border-color: @CBBelizeHole;
+                box-shadow: none;
+                margin-right: 12px;
+            }
+
+            .name {
+                margin-top: 8px;
+                font-size: 24px;
+                color: @CPWhite;
+            }
+
+            .menu-bar {
+                border-color: transparent;
+
+                .menu {
+                    background-color: transparent;
+
+                    li {
+                        background-color: transparent;
+
+                        a {
+                            color: @CLClouds;
+
+                            &:hover {
+                                color: @CPWhite;
+                                box-shadow: none;
+                                border-bottom-color: @CBBelizeHole;
+                            }
+
+                            &.active {
+                                border-bottom-color: @CLClouds;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.center {
+    .center-it();
+
+    .container {
+        display: flex;
+
+        .entries {
+            width: 70%;
+
+            .block {
+                background-color: @CPWhite;
+                box-shadow: 0 0 5px @CLSilver;
+                padding: 25px;
+            }
+        }
+
+        .sidebar {
+            margin-left: 2.5%;
+            width: 27.5%;
+            padding: 25px;
+            background-color: @CPWhite;
+            box-shadow: 0 0 5px @CLSilver;
+        }
+    }
+}
