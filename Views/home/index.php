@@ -29,7 +29,7 @@
 </div>
 <div class="header">
     <div class="container">
-        <span class="title">Audicio</span>
+        <span class="logo">Audicio</span>
         <ul class="nav">
         <li>About</li>
         <li>Team</li>
