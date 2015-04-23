@@ -1,8 +1,120 @@
 ﻿@import "palette.less";
 
-body {
-    padding: 25px;
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: @CBPeterRiver;
+    color: @CPWhite;
+    box-shadow: 0 2px 3px @CLClouds;
+    padding: 0 25px;
 
+    .container {
+        padding: 0;
+
+        .controls {
+            float: right;
+            color: @CPWhite;
+
+            .skip:hover {
+                text-decoration: underline;
+            }
+
+            .next {
+                padding: 8px 12px;
+                background-color: @CPWhite;
+                color: @CBPeterRiver;
+                margin-top: 12px;
+                margin-left: 25px;
+                box-shadow: 0 0 5px @CBBelizeHole;
+                -moz-transition: box-shadow .2s;
+                -o-transition: box-shadow .2s;
+                -webkit-transition: box-shadow .2s;
+                transition: box-shadow .2s;
+
+                &:hover {
+                    color: @CBBelizeHole;
+                    box-shadow: 0 2px 5px darken(@CBBelizeHole, 15%);
+                }
+
+                &:active {
+                    box-shadow: 0 0 3px @CBBelizeHole;
+                }
+            }
+        }
+
+        ul {
+            height: 60px;
+            overflow: hidden;
+            list-style: none;
+
+            li {
+                &.logo {
+                    margin-right: 100px;
+                }
+
+                &.title {
+                    font-weight: bold;
+                    margin-right: 25px;
+                    line-height: 60px;
+                }
+
+                text-transform: capitalize;
+                float: left;
+
+                > span {
+                    display: inline-block;
+                    height: 60px;
+                    line-height: 60px;
+                }
+
+                .content {
+                    -moz-transition: background .2s;
+                    -o-transition: background .2s;
+                    -webkit-transition: background .2s;
+                    transition: background .2s;
+                    padding: 0 6px;
+                }
+
+                .sep {
+                    width: 30px;
+                    height: 60px;
+                    position: relative;
+                    float: left;
+                    background-image: url(../img/stepnw.png);
+                    -moz-transition: background .2s;
+                    -o-transition: background .2s;
+                    -webkit-transition: background .2s;
+                    transition: background .2s;
+                }
+
+                &.on {
+                    .sep {
+                        background-image: url(../img/stepow.png);
+                    }
+
+                    .content {
+                        background-color: @CPWhite;
+                        color: @CBBelizeHole;
+                    }
+
+                    & + li .sep {
+                        background-image: url(../img/stepiw.png);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+    padding: 85px 0 25px;
+}
+
+.container.mark {
     h1 {
         font-size: 1.5em;
         margin-bottom: 12px;
@@ -49,15 +161,17 @@ body {
                     @media (min-width: 599px) {
                         width: 50%;
                     }
+
                     @media (min-width: 899px) {
                         width: 33.33%;
                     }
+
                     @media (min-width: 1199px) {
                         width: 25%;
                     }
                 }
 
-                .item {                    
+                .item {
                     background-color: #FFF;
                     padding: 12px 12px 12px 40px;
                     -moz-transition: color .2s, background .2s;
@@ -67,6 +181,7 @@ body {
                     box-shadow: 0 1px 3px @CLSilver;
                     cursor: pointer;
                     width: 95%;
+                    font-size: 14px;
                     margin: auto;
 
                     &:hover {
@@ -81,6 +196,129 @@ body {
                         background-size: 24px 24px;
                         color: #FFF;
                     }
+                }
+            }
+        }
+    }
+}
+
+.container.intro {
+    width: 600px;
+    text-align: center;
+
+    .block {
+        background-color: @CPWhite;
+        box-shadow: 0 0 5px @CLSilver;
+        padding: 25px;
+
+        > * {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: @CBPeterRiver;
+            font-family: 'Dancing Script';
+        }
+
+        p:first-child {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    }
+}
+
+.container.profile {
+    .block {
+        background-color: @CPWhite;
+        box-shadow: 0 0 5px @CLSilver;
+        padding: 25px;
+        margin-bottom: 25px;
+
+        .title {
+            border-bottom: 1px solid @CLClouds;
+            padding-bottom: 6px;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .field {
+            padding: 6px 0;
+
+            span {
+                float: left;
+                width: 150px;
+                line-height: 35px;
+            }
+
+            input {
+                display: inline-block;
+                width: 300px;
+                height: 36px;
+                background-color: @CPWhite;
+                box-shadow: 0 0 2px @CLSilver;
+                padding: 4px 20px;
+                border-bottom: 2px solid @CLClouds;
+
+                &:focus {
+                    border-bottom-color: @CBPeterRiver;
+                }
+            }
+        }
+
+        .hint {
+            padding-left: 25px;
+            font-size: 13px;
+            color: @CGrConcrete;
+            font-weight: 100;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.container.media {
+    .dropzone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        border: 3px dashed @CLClouds;
+        background-image: url(../img/upload.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        .content {
+            text-align: center;
+            color: @CGrAsbestos;
+
+            p {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            .upload {
+                background-color: @CPWhite;
+                border-bottom: 2px solid @CLClouds;
+                box-shadow: 0 1px 4px @CLSilver;
+                width: 100px;
+                margin: 12px auto;
+                padding: 8px 12px;
+                cursor: pointer;
+                -moz-transition: all .2s;
+                -o-transition: all .2s;
+                -webkit-transition: all .2s;
+                transition: all .2s;
+
+                &:hover {
+                    color: @CPBlack;
+                    border-bottom-color: @CBPeterRiver;
+                    box-shadow: 0 4px 6px @CLSilver;
+                }
+
+                &:active {
+                    color: @CPWhite;
+                    background-color: @CBPeterRiver;
+                    box-shadow: 0 0 3px @CLSilver;
                 }
             }
         }

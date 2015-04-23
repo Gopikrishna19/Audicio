@@ -40,6 +40,25 @@ a:active {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+.header .content .logo {
+  float: left;
+  font-size: 26px;
+  margin-right: 0;
+  width: 0;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.header .content .logo.special {
+  position: absolute;
+  bottom: 60px;
+  right: 25px;
+  color: #bdc3c7;
+  font-size: 2em;
+  width: auto;
+  overflow: hidden;
+}
 .header .content .img {
   height: 200px;
   width: 200px;
@@ -123,20 +142,27 @@ a:active {
   background-color: #3498db;
 }
 .header.min .content {
-  padding: 5px 25px;
+  padding: 9px 25px;
   background-color: transparent;
   box-shadow: none;
 }
+.header.min .content .logo {
+  margin-right: 25px;
+  width: 70px;
+}
+.header.min .content .logo.special {
+  height: 0;
+}
 .header.min .content .img {
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   border-color: #2980b9;
   box-shadow: none;
   margin-right: 12px;
 }
 .header.min .content .name {
-  margin-top: 8px;
-  font-size: 24px;
+  margin-top: 6px;
+  font-size: 20px;
   color: #ffffff;
 }
 .header.min .content .menu-bar {

@@ -1,18 +1,16 @@
-<h1>Mark Your Talents</h1>
-<p>Select the talents from the following list that applies to you</p>
-
-<div ng-controller="MainCtrl">
-    <div ng-repeat="(key, cat) in categories">
-        <div heading="{{key}}"></div>
-        <div class="block">
-            <div ng-repeat="(sub, items) in cat">
-                <div class="sub-title">{{sub}}</div>
-                <div class="entries">
-                    <div ng-repeat="item in items" class="col">
-                        <div item>{{item}}</div>
-                    </div>
-                </div>
-            </div>
+<div class="header" ng-controller="MainCtrl">
+    <div class="container">
+        <div class="controls">
+            <button class="skip" ng-click="next()">Skip</button>
+            <button class="next" ng-click="next()">{{btnNext}}</button>
         </div>
+        <ul>
+            <li class="logo">Audicio</li>
+            <li class="title">Configuration</li>
+            <li ng-repeat="step in steps" step="{{step}}" ng-class="{on:onPage(step)}"></li>
+            <li step="Finish"><span class="sep"></span></li>
+        </ul>
     </div>
+</div>
+<div ng-view>
 </div>

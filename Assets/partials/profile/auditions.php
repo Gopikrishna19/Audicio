@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container auditions">
     <div class="entries">
         <div class="block"></div>
     </div>

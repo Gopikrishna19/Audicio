@@ -23,11 +23,9 @@ var lGoogle = {
     clientid: '993932107238-22c457mg8i3i9acfupf4fa9kc7dqiu7t.apps.googleusercontent.com',
     scopes: 'https://www.googleapis.com/auth/plus.login email',
     checkAuth: function () {
-        console.log('In CheckAuth');
         gapi.auth.authorize({ client_id: lGoogle.clientid, scope: lGoogle.scopes, immediate: true }, lGoogle.handleAuthResult);
     },
     handleAuthResult: function (result) {
-        console.log('In handle');
         if (result && !result.error) {
             lGoogle.getUserInfo();
         } else {
@@ -38,7 +36,6 @@ var lGoogle = {
         gapi.auth.authorize({ client_id: lGoogle.clientid, scope: lGoogle.scopes, immediate: false }, lGoogle.handleAuthResult);
     },
     getUserInfo: function () {
-        console.log('In UserInfo');
         gapi.client.load('plus', 'v1').then(function () {
             var request = gapi.client.plus.people.get({ 'userId': 'me' });
             request.then(function (resp) {
@@ -64,11 +61,9 @@ var lFacebook = {
     clientid: '863440873728460',
     scopes: 'email',
     checkAuth: function () {
-        console.log('In CheckAuth');
         FB.getLoginStatus(lFacebook.handleAuthResult);
     },
-    handleAuthResult: function (result) {
-        console.log('In handle');
+    handleAuthResult: function (result) {        
         if (result && result.status == 'connected') {
             lFacebook.getUserInfo();
         } else {
@@ -79,7 +74,6 @@ var lFacebook = {
         FB.login(lFacebook.handleAuthResult, { scope: lFacebook.scopes });
     },
     getUserInfo: function () {
-        console.log('In UserInfo');
         FB.api('/me', function (resp) {
             redirect(resp.email);
         })
@@ -110,5 +104,5 @@ function initAPIs() {
 }
 
 function redirect(email) {
-    window.location.href = '/profile';
+    window.location.href = '/profile/config';
 }

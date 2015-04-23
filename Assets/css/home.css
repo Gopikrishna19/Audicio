@@ -14,6 +14,44 @@ body {
   height: 100%;
   width: 100%;
 }
+.header {
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  background-color: #3498db;
+  box-shadow: 0 0 7px #bdc3c7;
+  top: 0;
+}
+.header .container {
+  max-width: 1000px;
+  padding: 0 25px;
+  margin: auto;
+}
+.header .container .logo {
+  line-height: 65px;
+}
+.header .container .nav {
+  float: right;
+}
+.header .container .nav li {
+  display: inline-block;
+  line-height: 43px;
+  color: #ffffff;
+  padding: 0 25px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  margin-top: 20px;
+}
+.header .container .nav li:hover {
+  border-bottom-color: #ffffff;
+}
+.header .container .nav li:active {
+  box-shadow: 0 -40px 25px -30px #ffffff inset;
+}
 .flex {
   background-color: #ffffff;
   height: 100%;

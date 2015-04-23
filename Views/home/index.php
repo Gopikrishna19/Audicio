@@ -27,4 +27,12 @@
     <script>
     </script>
 </div>
-<div class="h1"></div>
+<div class="header">
+    <div class="container">
+        <span class="title">Audicio</span>
+        <ul class="nav">
+        <li>About</li>
+        <li>Team</li>
+    </ul>
+    </div>
+</div>

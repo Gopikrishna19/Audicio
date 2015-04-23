@@ -1,5 +1,7 @@
 <div class="header" ng-class="isMin ? 'min':''" ng-controller="HeadCtrl">
     <div class="content">
+        <div class="logo">Audicio</div>
+        <div class="logo special">Audicio</div>
         <div class="img"></div>
         <div class="name">This is My Name</div>
         <div class="menu-bar">

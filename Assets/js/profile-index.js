@@ -7,14 +7,14 @@ app.config(function ($routeProvider) {
         .when('/news', {
             templateUrl: '/Assets/partials/profile/news.php'
         })
-        .when('/blog', {
-            templateUrl: '/Assets/partials/profile/blog.php'
+        .when('/auditions', {
+            templateUrl: '/Assets/partials/profile/auditions.php'
         })
         .when('/profile', {
             templateUrl: '/Assets/partials/profile/profile.php'
         })
-        .when('/portfolio', {
-            templateUrl: '/Assets/partials/profile/portfolio.php'
+        .when('/projects', {
+            templateUrl: '/Assets/partials/profile/projects.php'
         })
         .otherwise({
             redirectTo: '/news'
@@ -22,8 +22,8 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('HeadCtrl', function ($scope, $location) {
-    $scope.menu = ['news', 'blog', 'portfolio', 'profile'];
-    $scope.isMin = true;
+    $scope.menu = ['news', 'auditions', 'projects', 'profile'];
+    $scope.isMin = "/profile" != $location.path();    
     $scope.isActive = function (route) {
         return '/' + route == $location.path();
     }

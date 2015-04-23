@@ -8,6 +8,51 @@ html, body {
     width: 100%;
 }
 
+.header {
+    width: 100%;
+    height: @head-height;
+    position: absolute;
+    background-color: @CBPeterRiver;
+    box-shadow: 0 0 7px @CLSilver;
+    top: @head-margin;
+
+    .container {
+        max-width: 1000px;
+        padding: 0 25px;
+        margin: auto;
+
+        .logo {
+            line-height: @head-height;
+        }
+
+        .nav {
+            float: right;
+
+            li {
+                display: inline-block;
+                line-height: @head-height - 22;
+                color: @CPWhite;
+                padding: 0 25px;
+                border-bottom: 2px solid transparent;
+                cursor: pointer;
+                -moz-transition: all .3s;
+                -o-transition: all .3s;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+                margin-top: 20px;
+
+                &:hover {
+                    border-bottom-color: @CPWhite;
+                }
+
+                &:active {
+                    box-shadow: 0 -40px 25px -30px @CPWhite inset;
+                }
+            }
+        }
+    }
+}
+
 .flex {
     background-color: @CPWhite;
     height: 100%;

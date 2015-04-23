@@ -13,9 +13,9 @@
         }
 
         public function config() {
-            $this->view->css[] = "profile";
             $this->view->css[] = "profile-config";
             $this->view->js[] = "angular";
+            $this->view->js[] = "angular-route";
             $this->view->js[] = "profile-config";
             $this->view->renderView(__CLASS__, __FUNCTION__);
         }

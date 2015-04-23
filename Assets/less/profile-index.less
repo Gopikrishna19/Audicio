@@ -33,6 +33,27 @@ a, a:link, a:visited, a:hover, a:active {
         -webkit-transition: all .3s;
         transition: all .3s;
 
+        .logo {
+            float: left;
+            font-size: 26px;
+            margin-right: 0;
+            width: 0;
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+            &.special {
+                position: absolute;
+                bottom: 60px;
+                right: 25px;
+                color: @CLSilver;
+                font-size: 2em;
+                width: auto;
+                overflow: hidden;
+            }
+        }
+
         .img {
             height: 200px;
             width: 200px;
@@ -127,21 +148,30 @@ a, a:link, a:visited, a:hover, a:active {
         background-color: @CBPeterRiver;
 
         .content {
-            padding: 5px 25px;
+            .logo {
+                margin-right: 25px;
+                width: 70px;
+
+                &.special {
+                    height: 0;
+                }
+            }
+
+            padding: 9px 25px;
             background-color: transparent;
             box-shadow: none;
 
             .img {
-                height: 40px;
-                width: 40px;
+                height: 32px;
+                width: 32px;
                 border-color: @CBBelizeHole;
                 box-shadow: none;
                 margin-right: 12px;
             }
 
             .name {
-                margin-top: 8px;
-                font-size: 24px;
+                margin-top: 6px;
+                font-size: 20px;
                 color: @CPWhite;
             }
 
