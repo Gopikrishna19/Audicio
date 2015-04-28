@@ -5,10 +5,6 @@
     top: 0;
     width: 100%;
     left: 0;
-    background-color: @CBPeterRiver;
-    color: @CPWhite;
-    box-shadow: 0 2px 3px @CLClouds;
-    padding: 0 25px;
 
     .container {
         padding: 0;
@@ -25,7 +21,7 @@
                 padding: 8px 12px;
                 background-color: @CPWhite;
                 color: @CBPeterRiver;
-                margin-top: 12px;
+                margin-top: 8px;
                 margin-left: 25px;
                 box-shadow: 0 0 5px @CBBelizeHole;
                 -moz-transition: box-shadow .2s;
@@ -44,20 +40,22 @@
             }
         }
 
+        .logo {
+            float: left;
+            line-height: 50px;
+        }
+
         ul {
-            height: 60px;
-            overflow: hidden;
+            height: 50px;
             list-style: none;
+            width: 541px;
+            margin: 0 auto;
 
             li {
-                &.logo {
-                    margin-right: 100px;
-                }
-
                 &.title {
                     font-weight: bold;
                     margin-right: 25px;
-                    line-height: 60px;
+                    line-height: 50px;
                 }
 
                 text-transform: capitalize;
@@ -65,8 +63,8 @@
 
                 > span {
                     display: inline-block;
-                    height: 60px;
-                    line-height: 60px;
+                    height: 50px;
+                    line-height: 50px;
                 }
 
                 .content {
@@ -74,12 +72,13 @@
                     -o-transition: background .2s;
                     -webkit-transition: background .2s;
                     transition: background .2s;
-                    padding: 0 6px;
+                    padding: 0 12px;
                 }
 
                 .sep {
-                    width: 30px;
-                    height: 60px;
+                    width: 15px;
+                    height: 50px;
+                    background-size: 100% 100%;
                     position: relative;
                     float: left;
                     background-image: url(../img/stepnw.png);

@@ -22,19 +22,23 @@ a:active {
 }
 .header {
   margin-bottom: 25px;
-  -moz-transition: all .3s;
-  -o-transition: all .3s;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background-color: transparent;
+}
+.header:not(.min) {
+  box-shadow: none;
 }
 .header .content {
   max-width: 1000px;
   margin: auto;
   overflow: auto;
-  padding: 25px;
   background-color: #ffffff;
   position: relative;
   box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
   -moz-transition: all .3s;
   -o-transition: all .3s;
   -webkit-transition: all .3s;
@@ -42,7 +46,6 @@ a:active {
 }
 .header .content .logo {
   float: left;
-  font-size: 26px;
   margin-right: 0;
   width: 0;
   -moz-transition: all .3s;
@@ -142,13 +145,14 @@ a:active {
   background-color: #3498db;
 }
 .header.min .content {
-  padding: 9px 25px;
+  padding: 0;
   background-color: transparent;
   box-shadow: none;
 }
 .header.min .content .logo {
   margin-right: 25px;
-  width: 70px;
+  width: 110px;
+  line-height: 50px;
 }
 .header.min .content .logo.special {
   height: 0;
@@ -159,9 +163,10 @@ a:active {
   border-color: #2980b9;
   box-shadow: none;
   margin-right: 12px;
+  margin-top: 8px;
 }
 .header.min .content .name {
-  margin-top: 6px;
+  margin-top: 14px;
   font-size: 20px;
   color: #ffffff;
 }

@@ -14,10 +14,6 @@
   top: 0;
   width: 100%;
   left: 0;
-  background-color: #3498db;
-  color: #ffffff;
-  box-shadow: 0 2px 3px #ecf0f1;
-  padding: 0 25px;
 }
 .header .container {
   padding: 0;
@@ -33,7 +29,7 @@
   padding: 8px 12px;
   background-color: #ffffff;
   color: #3498db;
-  margin-top: 12px;
+  margin-top: 8px;
   margin-left: 25px;
   box-shadow: 0 0 5px #2980b9;
   -moz-transition: box-shadow 0.2s;
@@ -48,38 +44,41 @@
 .header .container .controls .next:active {
   box-shadow: 0 0 3px #2980b9;
 }
+.header .container .logo {
+  float: left;
+  line-height: 50px;
+}
 .header .container ul {
-  height: 60px;
-  overflow: hidden;
+  height: 50px;
   list-style: none;
+  width: 541px;
+  margin: 0 auto;
 }
 .header .container ul li {
   text-transform: capitalize;
   float: left;
 }
-.header .container ul li.logo {
-  margin-right: 100px;
-}
 .header .container ul li.title {
   font-weight: bold;
   margin-right: 25px;
-  line-height: 60px;
+  line-height: 50px;
 }
 .header .container ul li > span {
   display: inline-block;
-  height: 60px;
-  line-height: 60px;
+  height: 50px;
+  line-height: 50px;
 }
 .header .container ul li .content {
   -moz-transition: background .2s;
   -o-transition: background .2s;
   -webkit-transition: background .2s;
   transition: background .2s;
-  padding: 0 6px;
+  padding: 0 12px;
 }
 .header .container ul li .sep {
-  width: 30px;
-  height: 60px;
+  width: 15px;
+  height: 50px;
+  background-size: 100% 100%;
   position: relative;
   float: left;
   background-image: url(../img/stepnw.png);

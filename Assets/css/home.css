@@ -16,7 +16,7 @@ body {
 }
 .header {
   width: 100%;
-  height: 65px;
+  height: 50px;
   position: absolute;
   background-color: #3498db;
   box-shadow: 0 0 7px #bdc3c7;
@@ -24,18 +24,17 @@ body {
 }
 .header .container {
   max-width: 1000px;
-  padding: 0 25px;
   margin: auto;
 }
 .header .container .logo {
-  line-height: 65px;
+  line-height: 50px;
 }
 .header .container .nav {
   float: right;
 }
 .header .container .nav li {
   display: inline-block;
-  line-height: 43px;
+  line-height: 28px;
   color: #ffffff;
   padding: 0 25px;
   border-bottom: 2px solid transparent;
@@ -55,7 +54,7 @@ body {
 .flex {
   background-color: #ffffff;
   height: 100%;
-  padding-top: 65px;
+  padding-top: 50px;
   display: flex;
 }
 .flex .p2 {
