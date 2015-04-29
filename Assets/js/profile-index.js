@@ -76,33 +76,33 @@ app.controller('AudiCtrl', function ($scope, categories) {
         for (cat in categories) arr.push([cat, categories[cat].class]);
         return arr;
     }();
-    $scope.isOn = [];
     $scope.updateOn = function (i) {
         if (i == 0) {
             angular.element('.auditions .entries .entry').removeClass('hide');
-            console.log(1);
         } else {
             angular.element('.auditions .entries .entry').addClass('hide');
-            console.log(2, angular.element('.auditions .entries .entry'));
             for (m = 1; m < $scope.filters.length; ++m)
                 if ($scope.isOn[m] == 'on') {
                     angular.element('.auditions .entries .entry.' + $scope.filters[m][1]).removeClass('hide');
-                    console.log(3, m, $scope.filters[m][1], angular.element('.auditions .entries .entry.' + $scope.filters[m][1]));
                 }
         }
+        if (localStorage) localStorage.isOnAudi = JSON.stringify($scope.isOn);
     }
     $scope.toggleOn = function (i) {
-        if (i == 0) for (all = true, m = 0; m < $scope.filters.length; $scope.isOn[m++] = 'on');
+        if (i == undefined);
+        else if (i == 0) for (all = true, m = 0; m < $scope.filters.length; $scope.isOn[m++] = 'on');
         else {
             if (all == true) {
                 all = false;
                 for (m = 0; m < $scope.filters.length; $scope.isOn[m++] = '');
             }
             $scope.isOn[i] = $scope.isOn[i] == 'on' ? '' : 'on';
+            if ($scope.isOn.indexOf('on') < 0) $scope.isOn[i] = 'on';
         }
         $scope.updateOn(i);
     }
-    $scope.toggleOn(0);
+    if (localStorage && localStorage.isOnAudi) { $scope.isOn = JSON.parse(localStorage.isOnAudi); $scope.toggleOn(); }
+    else { $scope.isOn = []; $scope.toggleOn(0); }
 });
 
 app.directive('audiMeta', function () {
@@ -115,7 +115,7 @@ app.directive('audiMeta', function () {
             for (a in attr) {
                 if (/^m/.test(a)) {
                     var k = a.slice(1).toLowerCase();
-                    tds.push(angular.element('<td class="key">'+keys[k]+':</td><td class="value">' + attr[a] + '</td>'));
+                    tds.push(angular.element('<td class="key">' + keys[k] + ':</td><td class="value">' + attr[a] + '</td>'));
                 }
             }
             var tr, trs = [];
