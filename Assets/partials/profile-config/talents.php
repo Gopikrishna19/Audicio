@@ -6,7 +6,7 @@
         <div ng-repeat="(key, cat) in categories">
             <div heading="{{key}}"></div>
             <div class="block">
-                <div ng-repeat="(sub, items) in cat">
+                <div ng-repeat="(sub, items) in cat" ng-if="sub != 'class'">
                     <div class="sub-title">{{sub}}</div>
                     <div class="entries">
                         <div ng-repeat="item in items" class="col">

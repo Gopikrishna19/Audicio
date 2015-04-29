@@ -1,0 +1,42 @@
+﻿@import "palette.less";
+
+.frame() {
+    border: 5px solid white;
+    box-shadow: 0 0 5px #DDD;
+    background-color: aliceblue;
+}
+
+.upload-btn() {
+    background-color: @CPWhite;
+    border-bottom: 2px solid @CLClouds;
+    box-shadow: 0 1px 4px @CLSilver;
+    margin: 12px auto;
+    padding: 8px 12px;
+    cursor: pointer;
+    -moz-transition: color .2s, box-shadow .2s, border .2s;
+    -o-transition: color .2s, box-shadow .2s, border .2s;
+    -webkit-transition: color .2s, box-shadow .2s, border .2s;
+    transition: color .2s, box-shadow .2s, border .2s;
+
+    &:hover {
+        color: @CPBlack;
+        border-bottom-color: @CBPeterRiver;
+        box-shadow: 0 2px 5px @CLSilver;
+    }
+
+    &:active {
+        color: @CPWhite;
+        background-color: @CBPeterRiver;
+        box-shadow: 0 0 3px @CLSilver;
+    }
+}
+
+.cancel-link(@decor: underline) {
+    color: @CRAlizarin;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: @decor;
+        color: @CRPomegrante;
+    }
+}

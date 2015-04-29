@@ -1,4 +1,4 @@
-﻿@import "palette.less";
+﻿@import "functions.less";
 
 .header {
     position: fixed;
@@ -233,12 +233,46 @@
         box-shadow: 0 0 5px @CLSilver;
         padding: 25px;
         margin-bottom: 25px;
+        overflow: auto;
 
         .title {
             border-bottom: 1px solid @CLClouds;
             padding-bottom: 6px;
             font-size: 18px;
             margin-bottom: 12px;
+        }
+
+        .photo {
+            .frame();
+            float: right;
+            height: 200px;
+            width: 200px;
+            margin-top: -40px;
+            background-image: url(../img/user.png);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center center;
+
+            .overlay {
+                opacity: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background-color: fade(@CPWhite, 75%);
+                -moz-transition: all .2s;
+                -o-transition: all .2s;
+                -webkit-transition: all .2s;
+                transition: all .2s;
+            }
+
+            &:hover .overlay {
+                opacity: 1;
+
+                .upload {
+                    .upload-btn();
+                }
+            }
         }
 
         .field {
@@ -272,6 +306,18 @@
             font-weight: 100;
             margin-bottom: 12px;
         }
+
+        textarea {
+            resize: none;
+            width: 100%;
+            min-height: 200px;
+            box-shadow: inset 0 0 5px @CLSilver;
+            padding: 25px;
+
+            &:focus {
+                box-shadow: inset 0 0 5px @CBPeterRiver;
+            }
+        }
     }
 }
 
@@ -296,29 +342,8 @@
             }
 
             .upload {
-                background-color: @CPWhite;
-                border-bottom: 2px solid @CLClouds;
-                box-shadow: 0 1px 4px @CLSilver;
+                .upload-btn();
                 width: 100px;
-                margin: 12px auto;
-                padding: 8px 12px;
-                cursor: pointer;
-                -moz-transition: all .2s;
-                -o-transition: all .2s;
-                -webkit-transition: all .2s;
-                transition: all .2s;
-
-                &:hover {
-                    color: @CPBlack;
-                    border-bottom-color: @CBPeterRiver;
-                    box-shadow: 0 4px 6px @CLSilver;
-                }
-
-                &:active {
-                    color: @CPWhite;
-                    background-color: @CBPeterRiver;
-                    box-shadow: 0 0 3px @CLSilver;
-                }
             }
         }
     }

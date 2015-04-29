@@ -1,4 +1,5 @@
 /// <reference path='angular.js' />
+/// <reference path='categories.js' />
 
 var app = angular.module('audicio', ['ngRoute']);
 app.directive('heading', function () {
@@ -29,52 +30,7 @@ app.directive('item', function () {
     }
 });
 
-app.value('categories', function () {
-    return {
-        "On Stage": {
-            "General": ["Actor", "Archimime"],
-            "Stunt": ["Coordinator", "Performer"],
-            "Technical": ["Stage Manager", "Lighting Designer", "Scenic Designer", "Electrician", "Director", "Location Manager", "Carpenter"]
-        },
-        "Management": {
-            "General": ["Property Manager", "General Manager"],
-            "Production": ["Sponsor", "Manager", "Assistant"],
-            "Direction": ["Director", "Assistant"],
-            "Talent": ["Manager", "Agent"]
-        },
-        "Dance": {
-            "General": ["Choreographer", "Dancer"]
-        },
-        "Music": {
-            "General": ["Director", "Organizer", "Engineer", "Producer", "Instructor", "Poet"],
-            "Song": ["Writer", "Singer", "Composer"],
-            "Instrument": ["Percussion", "Strings", "Keyboards", "Wind", "Brass"],
-            "Other": ["Librarian"]
-        },
-        "Script": {
-            "General": ["Line Producer", "Author", "Screen Writer", "Editor", "Technical Writer", "Linguist", "Literary Manager"]
-        },
-        "Art": {
-            "General": ["Consultant", "Instructor", "Director", "Artisan"],
-            "Animation": ["Animator", "Director"]
-        },
-        "Fashion": {
-            "General": ["Desginer", "Model", "Makeup Artist", "Costume Designer", "Costume Director"]
-        },
-        "Decoration": {
-            "General": ["Production  Designer", "Set Decorator", "Set Dresser"]
-        },
-        "Marketing": {
-            "General": ["Marketing Director", "Public Relations Manager", "Audience Services Manager", "Ticketing Agent", "Publisher"]
-        },
-        "Advertising": {
-            "General": ["Promoter", "Visualizer", "Barker", "Critic"]
-        },
-        "Others": {
-            "General": ["Usher", "Consultant", "Pyro Technician", "Crowd Entertainer", "Illusionist"]
-        }
-    }
-}());
+app.value('categories', talentCategories());
 
 app.controller('MarkCtrl', function ($scope, categories) {
     $scope.categories = categories;
@@ -83,16 +39,13 @@ app.controller('MarkCtrl', function ($scope, categories) {
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/intro', {
-            templateUrl: '/Assets/partials/profile-config/intro.php',
-            controller: 'MarkCtrl'
+            templateUrl: '/Assets/partials/profile-config/intro.php'
         })
         .when('/profile', {
-            templateUrl: '/Assets/partials/profile-config/profile.php',
-            controller: 'MarkCtrl'
+            templateUrl: '/Assets/partials/profile-config/profile.php'
         })
         .when('/media', {
-            templateUrl: '/Assets/partials/profile-config/media.php',
-            controller: 'MarkCtrl'
+            templateUrl: '/Assets/partials/profile-config/media.php'
         })
         .when('/talents', {
             templateUrl: '/Assets/partials/profile-config/talents.php',
@@ -103,9 +56,7 @@ app.config(function ($routeProvider) {
         })
 });
 
-app.controller('MainCtrl', function ($scope, $location) {    
-    console.log($location.path());
-
+app.controller('MainCtrl', function ($scope, $location) {
     $scope.steps = ['intro', 'profile', 'talents', 'media'];
     $scope.index = 0;
 

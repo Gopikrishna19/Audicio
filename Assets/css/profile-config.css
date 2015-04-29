@@ -203,12 +203,63 @@
   box-shadow: 0 0 5px #bdc3c7;
   padding: 25px;
   margin-bottom: 25px;
+  overflow: auto;
 }
 .container.profile .block .title {
   border-bottom: 1px solid #ecf0f1;
   padding-bottom: 6px;
   font-size: 18px;
   margin-bottom: 12px;
+}
+.container.profile .block .photo {
+  border: 5px solid white;
+  box-shadow: 0 0 5px #DDD;
+  background-color: aliceblue;
+  float: right;
+  height: 200px;
+  width: 200px;
+  margin-top: -40px;
+  background-image: url(../img/user.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+}
+.container.profile .block .photo .overlay {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.container.profile .block .photo:hover .overlay {
+  opacity: 1;
+}
+.container.profile .block .photo:hover .overlay .upload {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.container.profile .block .photo:hover .overlay .upload:hover {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.container.profile .block .photo:hover .overlay .upload:active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
 }
 .container.profile .block .field {
   padding: 6px 0;
@@ -237,6 +288,16 @@
   font-weight: 100;
   margin-bottom: 12px;
 }
+.container.profile .block textarea {
+  resize: none;
+  width: 100%;
+  min-height: 200px;
+  box-shadow: inset 0 0 5px #bdc3c7;
+  padding: 25px;
+}
+.container.profile .block textarea:focus {
+  box-shadow: inset 0 0 5px #3498db;
+}
 .container.media .dropzone {
   display: flex;
   align-items: center;
@@ -259,19 +320,19 @@
   background-color: #ffffff;
   border-bottom: 2px solid #ecf0f1;
   box-shadow: 0 1px 4px #bdc3c7;
-  width: 100px;
   margin: 12px auto;
   padding: 8px 12px;
   cursor: pointer;
-  -moz-transition: all .2s;
-  -o-transition: all .2s;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  width: 100px;
 }
 .container.media .dropzone .content .upload:hover {
   color: #000000;
   border-bottom-color: #3498db;
-  box-shadow: 0 4px 6px #bdc3c7;
+  box-shadow: 0 2px 5px #bdc3c7;
 }
 .container.media .dropzone .content .upload:active {
   color: #ffffff;

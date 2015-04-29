@@ -2,7 +2,7 @@
     <div class="content">
         <div class="logo">Audicio</div>
         <div class="logo special">Audicio</div>
-        <div class="img"></div>
+        <div class="img"><img src="/Assets/img/user.png" alt="user"/></div>
         <div class="name">This is My Name</div>
         <div class="menu-bar">
             <ul class="menu">
