@@ -1,5 +1,5 @@
 <div class="header" ng-controller="MainCtrl">
-    <div class="container">
+    <div class="content">
         <div class="controls">
             <button class="skip" ng-click="next()">Skip</button>
             <button class="next" ng-click="next()">{{btnNext}}</button>

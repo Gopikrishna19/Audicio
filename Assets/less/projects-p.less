@@ -1,0 +1,170 @@
+﻿@import "functions.less";
+
+.center {
+    .center-it();
+}
+
+.center .container.home {
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    & > .title {
+        .talent-title();
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .teams {
+        width: 70%;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+
+        .team {
+            width: 50%;
+            padding: 0 12px;
+            margin-bottom: 25px;
+
+            .content {
+                .block-div();
+
+                .title {
+                    border-bottom: 1px solid @CLClouds;
+                    padding-bottom: 6px;
+                    margin-bottom: 12px;
+                    font-weight: bold;
+                    font-size: 14px;
+
+                    a:hover {
+                        color: @CBPeterRiver;
+                        border-color: @CBPeterRiver;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                    height: 3.6em;
+                    overflow: hidden;
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 70%;
+                        background: linear-gradient(to right, fade(@CPWhite, 0), @CPWhite 50%);
+                        height: 1.2em;
+                    }
+                }
+
+                ul {
+                    display: inline-block;
+                    margin: auto;
+                    height: 116px;
+
+                    li {
+                        display: inline-block;
+                        margin: 2px;
+
+                        a {
+                            .frame();
+                            display: block;
+                            width: 50px;
+                            height: 50px;
+                            background-image: url(../img/user.png);
+                            background-size: 100% 100%;
+                            border-radius: 35px;
+                            box-shadow: 0 0 2px @CLClouds;
+                            background-repeat: no-repeat;
+                            -moz-transition: all .2s;
+                            -o-transition: all .2s;
+                            -webkit-transition: all .2s;
+                            transition: all .2s;
+
+                            &:hover {
+                                border-width: 0;
+                                box-shadow: none;
+                            }
+
+                            &.more {
+                                background-image: url(../img/more.png);
+                                background-size: 70% auto;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-color: #ecf0f1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .milestone {
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -ms-flex: 1;
+        flex: 1;
+        align-self: flex-start;
+        margin: 0 12px 0 13px;
+        .block-div();
+
+        & > .title {
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid fade(@CGrConcrete, 40%);
+            width: 100%;
+        }
+
+        .meter {
+            width: 12px;
+            border-radius: 6px;
+            box-shadow: inset 0 0 5px @CLSilver;
+            background-color: @CPWhite;
+            margin: 0 25px 0 12px;
+
+            .ind {
+                border-radius: 6px;
+                box-shadow: inset 0 3px 6px 1px darken(@CBBelizeHole, 15%), inset -1px -2px 2px 1px @CPWhite;
+                width: 100%;
+                height: 150px;
+                background-color: @CBPeterRiver;
+            }
+        }
+
+        .stones {
+            -ms-flex: 1;
+            flex: 1;
+            padding-top: 25px;
+
+            .stone {
+                color: @CBBelizeHole;
+
+                &.y {
+                    color: @CGNephritis;
+                }
+
+                &.n {
+                    color: @CRPomegrante;
+                }
+
+                .date {
+                    font-size: 12px;
+                    font-style: italic;
+                    margin-bottom: 6px;
+                }
+
+                .name {
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}

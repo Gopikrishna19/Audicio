@@ -1,9 +1,14 @@
 ﻿@import "palette.less";
 
+.center-it() {
+    max-width: 1000px;
+    margin: auto;
+}
+
 .frame() {
-    border: 5px solid white;
-    box-shadow: 0 0 5px #DDD;
-    background-color: aliceblue;
+    border: 5px solid @CPWhite;
+    box-shadow: 0 0 5px @CLSilver;
+    background-color: lighten(@CBPeterRiver, 42%);
 }
 
 .upload-btn() {
@@ -18,7 +23,7 @@
     -webkit-transition: color .2s, box-shadow .2s, border .2s;
     transition: color .2s, box-shadow .2s, border .2s;
 
-    &:hover {
+    &:hover, &:focus {
         color: @CPBlack;
         border-bottom-color: @CBPeterRiver;
         box-shadow: 0 2px 5px @CLSilver;
@@ -39,4 +44,23 @@
         text-decoration: @decor;
         color: @CRPomegrante;
     }
+}
+
+.talent-title() {
+    border-bottom: 1px solid @CLClouds;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    max-height: 40px;
+
+    span {
+        border-bottom: 1px solid @CPBlack;
+        padding: 9px 0;
+    }
+}
+
+.block-div {
+    background-color: @CPWhite;
+    box-shadow: 0 0 5px @CLSilver;
+    padding: 25px;
 }

@@ -6,8 +6,8 @@
     width: 100%;
     left: 0;
 
-    .container {
-        padding: 0;
+    .content {        
+        .center-it();
 
         .controls {
             float: right;
@@ -110,7 +110,7 @@
 .container {
     width: 1000px;
     margin: auto;
-    padding: 85px 0 25px;
+    padding: 75px 0 25px;
 }
 
 .container.mark {
@@ -125,17 +125,7 @@
     }
 
     .title {
-        border-bottom: 1px solid @CLClouds;
-        font-weight: bold;
-        margin-bottom: 12px;
-        padding-bottom: 8px;
-        max-height: 40px;
-        font-size: 18px;
-
-        span {
-            border-bottom: 1px solid @CPBlack;
-            padding: 9px 0;
-        }
+        .talent-title();
     }
 
     .block {
@@ -144,6 +134,7 @@
         .sub-title {
             margin-bottom: 12px;
             font-weight: bold;
+            font-size: 14px;            
         }
 
         .entries {
@@ -206,9 +197,7 @@
     text-align: center;
 
     .block {
-        background-color: @CPWhite;
-        box-shadow: 0 0 5px @CLSilver;
-        padding: 25px;
+        .block-div();
 
         > * {
             margin-bottom: 25px;
@@ -229,9 +218,7 @@
 
 .container.profile {
     .block {
-        background-color: @CPWhite;
-        box-shadow: 0 0 5px @CLSilver;
-        padding: 25px;
+        .block-div();
         margin-bottom: 25px;
         overflow: auto;
 

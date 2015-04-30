@@ -9,23 +9,29 @@
 /*Grey*/
 /*Light Grey*/
 /*Pure*/
+.block-div {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   left: 0;
 }
-.header .container {
-  padding: 0;
+.header .content {
+  max-width: 1000px;
+  margin: auto;
 }
-.header .container .controls {
+.header .content .controls {
   float: right;
   color: #ffffff;
 }
-.header .container .controls .skip:hover {
+.header .content .controls .skip:hover {
   text-decoration: underline;
 }
-.header .container .controls .next {
+.header .content .controls .next {
   padding: 8px 12px;
   background-color: #ffffff;
   color: #3498db;
@@ -37,45 +43,45 @@
   -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
 }
-.header .container .controls .next:hover {
+.header .content .controls .next:hover {
   color: #2980b9;
   box-shadow: 0 2px 5px #1b557a;
 }
-.header .container .controls .next:active {
+.header .content .controls .next:active {
   box-shadow: 0 0 3px #2980b9;
 }
-.header .container .logo {
+.header .content .logo {
   float: left;
   line-height: 50px;
 }
-.header .container ul {
+.header .content ul {
   height: 50px;
   list-style: none;
   width: 541px;
   margin: 0 auto;
 }
-.header .container ul li {
+.header .content ul li {
   text-transform: capitalize;
   float: left;
 }
-.header .container ul li.title {
+.header .content ul li.title {
   font-weight: bold;
   margin-right: 25px;
   line-height: 50px;
 }
-.header .container ul li > span {
+.header .content ul li > span {
   display: inline-block;
   height: 50px;
   line-height: 50px;
 }
-.header .container ul li .content {
+.header .content ul li .content {
   -moz-transition: background .2s;
   -o-transition: background .2s;
   -webkit-transition: background .2s;
   transition: background .2s;
   padding: 0 12px;
 }
-.header .container ul li .sep {
+.header .content ul li .sep {
   width: 15px;
   height: 50px;
   background-size: 100% 100%;
@@ -87,20 +93,20 @@
   -webkit-transition: background .2s;
   transition: background .2s;
 }
-.header .container ul li.on .sep {
+.header .content ul li.on .sep {
   background-image: url(../img/stepow.png);
 }
-.header .container ul li.on .content {
+.header .content ul li.on .content {
   background-color: #ffffff;
   color: #2980b9;
 }
-.header .container ul li.on + li .sep {
+.header .content ul li.on + li .sep {
   background-image: url(../img/stepiw.png);
 }
 .container {
   width: 1000px;
   margin: auto;
-  padding: 85px 0 25px;
+  padding: 75px 0 25px;
 }
 .container.mark h1 {
   font-size: 1.5em;
@@ -115,7 +121,6 @@
   margin-bottom: 12px;
   padding-bottom: 8px;
   max-height: 40px;
-  font-size: 18px;
 }
 .container.mark .title span {
   border-bottom: 1px solid #000000;
@@ -127,6 +132,7 @@
 .container.mark .block .sub-title {
   margin-bottom: 12px;
   font-weight: bold;
+  font-size: 14px;
 }
 .container.mark .block .entries {
   display: flex;
@@ -212,9 +218,9 @@
   margin-bottom: 12px;
 }
 .container.profile .block .photo {
-  border: 5px solid white;
-  box-shadow: 0 0 5px #DDD;
-  background-color: aliceblue;
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  background-color: #eaf4fb;
   float: right;
   height: 200px;
   width: 200px;
@@ -251,7 +257,8 @@
   -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
 }
-.container.profile .block .photo:hover .overlay .upload:hover {
+.container.profile .block .photo:hover .overlay .upload:hover,
+.container.profile .block .photo:hover .overlay .upload:focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
@@ -329,7 +336,8 @@
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   width: 100px;
 }
-.container.media .dropzone .content .upload:hover {
+.container.media .dropzone .content .upload:hover,
+.container.media .dropzone .content .upload:focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;

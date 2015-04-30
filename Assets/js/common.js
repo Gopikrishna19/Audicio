@@ -55,3 +55,12 @@
         }
     }
 }
+
+function talentHeading() {
+    return {
+        link: function (scope, element, attrs) {
+            element.addClass('title');
+            element.html("<span>" + attrs.heading + "</span>");
+        }
+    }
+}

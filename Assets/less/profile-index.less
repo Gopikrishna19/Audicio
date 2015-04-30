@@ -1,10 +1,5 @@
 ﻿@import "functions.less";
 
-.center-it() {
-    max-width: 1000px;
-    margin: auto;
-}
-
 li {
     list-style: none;
 }
@@ -29,10 +24,8 @@ a, a:link, a:visited, a:hover, a:active {
     .content {
         .center-it();
         overflow: auto;
-        background-color: @CPWhite;
+        .block-div();
         position: relative;
-        box-shadow: 0 0 5px @CLSilver;
-        padding: 25px;
         -moz-transition: all .3s;
         -o-transition: all .3s;
         -webkit-transition: all .3s;
@@ -178,17 +171,18 @@ a, a:link, a:visited, a:hover, a:active {
                 border: 3px solid @CBBelizeHole;
                 box-shadow: none;
                 margin-right: 12px;
-                margin-top: 8px;
+                margin-top: 10px;
             }
 
             .name {
-                margin-top: 14px;
+                margin-top: 16px;
                 font-size: 20px;
                 color: @CPWhite;
             }
 
             .menu-bar {
                 border-color: transparent;
+                padding-right: 0;
 
                 .menu {
                     background-color: transparent;
@@ -221,14 +215,15 @@ a, a:link, a:visited, a:hover, a:active {
 
     .container {
         display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
         align-items: flex-start;
 
         .entries {
             width: 70%;
 
             .entry {
-                background-color: @CPWhite;
-                box-shadow: 0 0 5px @CLSilver;
+                .block-div();
                 background-repeat: no-repeat;
                 background-position: 12px 12px;
                 background-size: 32px 32px;
@@ -279,9 +274,7 @@ a, a:link, a:visited, a:hover, a:active {
             margin-left: 2.5%;
             width: 27.5%;
             padding: 0 25px;
-            /*padding: 25px;
-            background-color: @CPWhite;
-            box-shadow: 0 0 5px @CLSilver;*/
+            
             &.filter {
                 .title {
                     padding-bottom: 6px;
@@ -479,6 +472,50 @@ a, a:link, a:visited, a:hover, a:active {
         p {
             margin: 12px 0;
             text-align: justify;
+        }
+    }
+}
+
+.center .container.portfolio {
+    .c {
+        margin-bottom: 12px;
+
+        &.c1 {
+            width: 100%;
+            padding: 12px;
+
+            div {
+                line-height: 36px;
+            }
+
+            a {
+                &:not(.btn) {
+                    font-size: 14px;
+                    color: @CBPeterRiver;
+                    font-weight: bold;
+                }
+
+                &.btn {
+                    .upload-btn();
+                    float: right;
+                    margin: 0;
+                }
+            }
+        }
+
+        &.c2 {
+            width: 50%;
+            padding: 12px;
+
+            .title {
+                .talent-title();
+                font-size: 14px;
+            }
+
+            .p a {
+                display: block;
+                .upload-btn();
+            }
         }
     }
 }

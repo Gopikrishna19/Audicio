@@ -1,4 +1,4 @@
-﻿@import "palette.less";
+﻿@import "functions.less";
 
 @head-height: 50px;
 @head-margin: 0;
@@ -17,8 +17,7 @@ html, body {
     top: @head-margin;
 
     .container {
-        max-width: 1000px;
-        margin: auto;
+        .center-it();
 
         .logo {
             line-height: @head-height;

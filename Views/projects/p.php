@@ -1,0 +1,16 @@
+<div class="header" ng-controller="HeadCtrl">
+    <div class="content">
+        <div class="logo">Audicio</div>
+        <div class="menu-bar">
+            <ul class="menu">
+                <li ng-show="isShowable('home')"><a href="#/home">Project Home</a></li>
+                <li ng-show="isShowable('set')"><a href="#/settings">Settings</a></li>
+                <li><a href="/projects">All Projects</a></li>
+                <li><a href="/profile">My Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="center">
+    <ng-view></ng-view>
+</div>

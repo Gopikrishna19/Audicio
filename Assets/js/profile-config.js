@@ -1,15 +1,9 @@
 /// <reference path='angular.js' />
-/// <reference path='categories.js' />
+/// <reference path='common.js' />
 
 var app = angular.module('audicio', ['ngRoute']);
-app.directive('heading', function () {
-    return {
-        link: function (scope, element, attrs) {
-            element.addClass('title');
-            element.html("<span>" + attrs.heading + "</span>");
-        }
-    }
-});
+
+app.directive('heading', talentHeading);
 
 app.directive('step', function ($compile) {
     return {

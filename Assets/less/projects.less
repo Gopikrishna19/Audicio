@@ -1,0 +1,50 @@
+﻿@import "functions.less";
+
+.header {
+    margin-bottom: 25px;
+
+    .content {
+        .center-it();
+
+        .logo {
+            margin-top: 1px;
+            float: left;
+        }
+
+        .menu-bar {
+            float: right;
+
+            .menu {
+                list-style: none;
+                margin-top: 5px;
+
+                li {
+                    display: inline-block;
+
+                    a {
+                        text-align: center;
+                        display: block;
+                        padding: 12px;
+                        width: 125px;
+                        color: @CLClouds;
+                        -moz-transition: all .2s;
+                        -o-transition: all .2s;
+                        -webkit-transition: all .2s;
+                        transition: all .2s;
+                        border-bottom: 3px solid transparent;
+                        text-transform: capitalize;
+
+                        &:hover {
+                            color: @CPWhite;
+                            border-bottom-color: @CBBelizeHole;
+                        }
+
+                        &.active {
+                            border-bottom-color: @CLClouds;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

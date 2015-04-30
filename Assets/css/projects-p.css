@@ -1,0 +1,176 @@
+﻿/*Bluish Green*/
+/*Yellowish Red*/
+/*Yellow*/
+/*Red*/
+/*Green*/
+/*Blue*/
+/*Violet*/
+/*Indigo*/
+/*Grey*/
+/*Light Grey*/
+/*Pure*/
+.block-div {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
+.center {
+  max-width: 1000px;
+  margin: auto;
+}
+.center .container.home {
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+.center .container.home > .title {
+  border-bottom: 1px solid #ecf0f1;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  max-height: 40px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.center .container.home > .title span {
+  border-bottom: 1px solid #000000;
+  padding: 9px 0;
+}
+.center .container.home .teams {
+  width: 70%;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.center .container.home .teams .team {
+  width: 50%;
+  padding: 0 12px;
+  margin-bottom: 25px;
+}
+.center .container.home .teams .team .content {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
+.center .container.home .teams .team .content .title {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.center .container.home .teams .team .content .title a:hover {
+  color: #3498db;
+  border-color: #3498db;
+}
+.center .container.home .teams .team .content p {
+  font-size: 14px;
+  margin-bottom: 25px;
+  height: 3.6em;
+  overflow: hidden;
+  position: relative;
+}
+.center .container.home .teams .team .content p:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);
+  height: 1.2em;
+}
+.center .container.home .teams .team .content ul {
+  display: inline-block;
+  margin: auto;
+  height: 116px;
+}
+.center .container.home .teams .team .content ul li {
+  display: inline-block;
+  margin: 2px;
+}
+.center .container.home .teams .team .content ul li a {
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  background-color: #eaf4fb;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/user.png);
+  background-size: 100% 100%;
+  border-radius: 35px;
+  box-shadow: 0 0 2px #ecf0f1;
+  background-repeat: no-repeat;
+  -moz-transition: all .2s;
+  -o-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.center .container.home .teams .team .content ul li a:hover {
+  border-width: 0;
+  box-shadow: none;
+}
+.center .container.home .teams .team .content ul li a.more {
+  background-image: url(../img/more.png);
+  background-size: 70% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #ecf0f1;
+}
+.center .container.home .milestone {
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex: 1;
+  flex: 1;
+  align-self: flex-start;
+  margin: 0 12px 0 13px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
+.center .container.home .milestone > .title {
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(149, 165, 166, 0.4);
+  width: 100%;
+}
+.center .container.home .milestone .meter {
+  width: 12px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px #bdc3c7;
+  background-color: #ffffff;
+  margin: 0 25px 0 12px;
+}
+.center .container.home .milestone .meter .ind {
+  border-radius: 6px;
+  box-shadow: inset 0 3px 6px 1px #1b557a, inset -1px -2px 2px 1px #ffffff;
+  width: 100%;
+  height: 150px;
+  background-color: #3498db;
+}
+.center .container.home .milestone .stones {
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 25px;
+}
+.center .container.home .milestone .stones .stone {
+  color: #2980b9;
+}
+.center .container.home .milestone .stones .stone.y {
+  color: #27ae60;
+}
+.center .container.home .milestone .stones .stone.n {
+  color: #c0392b;
+}
+.center .container.home .milestone .stones .stone .date {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.center .container.home .milestone .stones .stone .name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+/*# sourceMappingURL=projects-p.css.map */

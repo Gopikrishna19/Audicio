@@ -9,4 +9,9 @@
 /*Grey*/
 /*Light Grey*/
 /*Pure*/
+.block-div {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
 /*# sourceMappingURL=functions.css.map */
