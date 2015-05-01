@@ -23,6 +23,8 @@
 
         public function team($id = null) {
             if($id=='') { header('Location: /projects'); return; }
+            $this->view->css[] = 'projects-team';
+            $this->view->js[] = 'projects-team';
             $this->view->renderView(__CLASS__,__FUNCTION__);
         }
     }

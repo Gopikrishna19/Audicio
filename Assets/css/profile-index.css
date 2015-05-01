@@ -130,7 +130,6 @@ a:active {
 .header .content .menu-bar .menu li a {
   display: block;
   padding: 12px;
-  width: 100px;
   color: #95a5a6;
   -moz-transition: all .2s;
   -o-transition: all .2s;
@@ -355,13 +354,20 @@ a:active {
   padding: 0 12px;
   color: #7f8c8d;
 }
-.center .container.news .entries .entry.invite .options button.accept:hover,
-.center .container.news .entries .entry.invite .options button.accept:focus {
+.center .container.news .entries .entry.invite .options button.accept[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.news .entries .entry.invite .options button.accept[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.news .entries .entry.invite .options button.accept:not([disabled]):hover,
+.center .container.news .entries .entry.invite .options button.accept:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.news .entries .entry.invite .options button.accept:active {
+.center .container.news .entries .entry.invite .options button.accept:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -444,22 +450,35 @@ a:active {
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   margin-bottom: 25px;
 }
-.center .container.auditions .sidebar button.apply:hover,
-.center .container.audition .sidebar button.apply:hover,
-.center .container.auditions .sidebar a.apply:hover,
-.center .container.audition .sidebar a.apply:hover,
-.center .container.auditions .sidebar button.apply:focus,
-.center .container.audition .sidebar button.apply:focus,
-.center .container.auditions .sidebar a.apply:focus,
-.center .container.audition .sidebar a.apply:focus {
+.center .container.auditions .sidebar button.apply[disabled],
+.center .container.audition .sidebar button.apply[disabled],
+.center .container.auditions .sidebar a.apply[disabled],
+.center .container.audition .sidebar a.apply[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.auditions .sidebar button.apply[disabled]:hover,
+.center .container.audition .sidebar button.apply[disabled]:hover,
+.center .container.auditions .sidebar a.apply[disabled]:hover,
+.center .container.audition .sidebar a.apply[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.auditions .sidebar button.apply:not([disabled]):hover,
+.center .container.audition .sidebar button.apply:not([disabled]):hover,
+.center .container.auditions .sidebar a.apply:not([disabled]):hover,
+.center .container.audition .sidebar a.apply:not([disabled]):hover,
+.center .container.auditions .sidebar button.apply:not([disabled]):focus,
+.center .container.audition .sidebar button.apply:not([disabled]):focus,
+.center .container.auditions .sidebar a.apply:not([disabled]):focus,
+.center .container.audition .sidebar a.apply:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.auditions .sidebar button.apply:active,
-.center .container.audition .sidebar button.apply:active,
-.center .container.auditions .sidebar a.apply:active,
-.center .container.audition .sidebar a.apply:active {
+.center .container.auditions .sidebar button.apply:not([disabled]):active,
+.center .container.audition .sidebar button.apply:not([disabled]):active,
+.center .container.auditions .sidebar a.apply:not([disabled]):active,
+.center .container.audition .sidebar a.apply:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -479,12 +498,54 @@ a:active {
   text-decoration: none;
   color: #c0392b;
 }
+.center .container.audition .entries {
+  -ms-flex: 1;
+  flex: 1;
+}
 .center .container.audition .entries .entry {
   padding: 25px;
 }
 .center .container.audition .entries .entry p {
   margin: 12px 0;
   text-align: justify;
+}
+.center .container.audition .sidebar {
+  width: 275px;
+}
+.center .container.audition .sidebar .title:nth-of-type(n+2) {
+  margin-top: 25px;
+}
+.center .container.audition .sidebar a.btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  text-align: center;
+  width: 150px;
+  margin: 12px auto;
+}
+.center .container.audition .sidebar a.btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.audition .sidebar a.btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.audition .sidebar a.btn:not([disabled]):hover,
+.center .container.audition .sidebar a.btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.audition .sidebar a.btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
 }
 .center .container.portfolio .c {
   margin-bottom: 12px;
@@ -515,13 +576,20 @@ a:active {
   float: right;
   margin: 0;
 }
-.center .container.portfolio .c.c1 a.btn:hover,
-.center .container.portfolio .c.c1 a.btn:focus {
+.center .container.portfolio .c.c1 a.btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.portfolio .c.c1 a.btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.portfolio .c.c1 a.btn:not([disabled]):hover,
+.center .container.portfolio .c.c1 a.btn:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.portfolio .c.c1 a.btn:active {
+.center .container.portfolio .c.c1 a.btn:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -555,13 +623,20 @@ a:active {
   -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
 }
-.center .container.portfolio .c.c2 .p a:hover,
-.center .container.portfolio .c.c2 .p a:focus {
+.center .container.portfolio .c.c2 .p a[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.portfolio .c.c2 .p a[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.portfolio .c.c2 .p a:not([disabled]):hover,
+.center .container.portfolio .c.c2 .p a:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.portfolio .c.c2 .p a:active {
+.center .container.portfolio .c.c2 .p a:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;

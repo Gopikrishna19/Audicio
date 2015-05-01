@@ -4,7 +4,9 @@
         <div class="menu-bar">
             <ul class="menu">
                 <li ng-show="isShowable('home')"><a href="#/home">Project Home</a></li>
-                <li ng-show="isShowable('set')"><a href="#/settings">Settings</a></li>
+                <li ng-repeat="m in menu">
+                    <a href="#{{m}}" ng-class="{active:isActive(m)}" ng-click="updateMin(m)">{{m}}</a>
+                </li>
                 <li><a href="/projects">All Projects</a></li>
                 <li><a href="/profile">My Profile</a></li>
             </ul>

@@ -115,7 +115,6 @@ a, a:link, a:visited, a:hover, a:active {
                     a {
                         display: block;
                         padding: 12px;
-                        width: 100px;
                         color: @CGrConcrete;
                         -moz-transition: all .2s;
                         -o-transition: all .2s;
@@ -274,7 +273,7 @@ a, a:link, a:visited, a:hover, a:active {
             margin-left: 2.5%;
             width: 27.5%;
             padding: 0 25px;
-            
+
             &.filter {
                 .title {
                     padding-bottom: 6px;
@@ -466,12 +465,34 @@ a, a:link, a:visited, a:hover, a:active {
         }
     }
 
-    &.audition .entries .entry {
-        padding: 25px;
+    &.audition {
+        .entries {
+            -ms-flex: 1;
+            flex: 1;
 
-        p {
-            margin: 12px 0;
-            text-align: justify;
+            .entry {
+                padding: 25px;
+
+                p {
+                    margin: 12px 0;
+                    text-align: justify;
+                }
+            }
+        }
+
+        .sidebar {
+            width: 275px;
+
+            .title:nth-of-type(n+2) {
+                margin-top: 25px;
+            }
+
+            a.btn {
+                .upload-btn();
+                text-align: center;
+                width: 150px;
+                margin: 12px auto;
+            }
         }
     }
 }

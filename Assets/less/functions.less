@@ -23,16 +23,26 @@
     -webkit-transition: color .2s, box-shadow .2s, border .2s;
     transition: color .2s, box-shadow .2s, border .2s;
 
-    &:hover, &:focus {
-        color: @CPBlack;
-        border-bottom-color: @CBPeterRiver;
-        box-shadow: 0 2px 5px @CLSilver;
+    &[disabled] {
+        background-color: @CLClouds;
+        &:hover {
+            border-bottom-color: @CRPomegrante;
+            cursor: not-allowed;
+        }
     }
 
-    &:active {
-        color: @CPWhite;
-        background-color: @CBPeterRiver;
-        box-shadow: 0 0 3px @CLSilver;
+    &:not([disabled]) {
+        &:hover, &:focus {
+            color: @CPBlack;
+            border-bottom-color: @CBPeterRiver;
+            box-shadow: 0 2px 5px @CLSilver;
+        }
+
+        &:active {
+            color: @CPWhite;
+            background-color: @CBPeterRiver;
+            box-shadow: 0 0 3px @CLSilver;
+        }
     }
 }
 
@@ -63,4 +73,12 @@
     background-color: @CPWhite;
     box-shadow: 0 0 5px @CLSilver;
     padding: 25px;
+}
+
+.block-title() {
+    border-bottom: 1px solid @CLClouds;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 14px;
 }

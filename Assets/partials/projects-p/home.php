@@ -1,5 +1,8 @@
 <div class="container home">
-    <div heading="Project 3"></div>
+    <div class="title-w">
+        <a href="#/create">Create New Team</a>
+        <div heading="Project 3"></div>
+    </div>
     <div class="teams">
         <div class="team">
             <div class="content">
@@ -8,6 +11,8 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent luctus ex in nisi.
                 </p>
                 <ul>
+                    <li><a href="/profile/of/1"></a></li>
+                    <li><a href="/profile/of/1"></a></li>
                     <li><a href="/profile/of/1"></a></li>
                     <li><a href="/profile/of/1"></a></li>
                     <li><a href="/profile/of/1"></a></li>
@@ -28,10 +33,6 @@
                 <ul>
                     <li><a href="/profile/of/1"></a></li>
                     <li><a href="/profile/of/1"></a></li>
-                    <li><a href="/profile/of/1"></a></li>
-                    <li><a href="/profile/of/1"></a></li>
-                    <li><a href="/profile/of/1"></a></li>
-                    <li><a href="/projects/team/1" class="more"></a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +46,9 @@
                 <ul>
                     <li><a href="/profile/of/1"></a></li>
                     <li><a href="/profile/of/1"></a></li>
-                    <li><a href="/projects/team/1" class="more"></a></li>
+                    <li><a href="/profile/of/1"></a></li>
+                    <li><a href="/profile/of/1"></a></li>
+                    <li><a href="/profile/of/1"></a></li>
                 </ul>
             </div>
         </div>

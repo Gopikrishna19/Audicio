@@ -25,5 +25,11 @@
         <div class="title">Actions</div>
         <button class="apply">Apply</button>
         <a href="#/auditions" class="back">&larr; Back to List</a>
+        <div class="title">Location</div>
+        <a href="http://google.com/maps/search/173,%20West%204th%20Street" target="_blank" class="back">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?size=225x170&markers=173,%20West%204th%20Street"
+                 alt="map"/>
+        </a>
+        <a class="btn" href="http://google.com/maps/dir/173,%20West%204th%20Street" target="_blank" class="back">Get Directions</a>
     </div>
 </div>

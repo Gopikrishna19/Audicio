@@ -257,13 +257,20 @@
   -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
 }
-.container.profile .block .photo:hover .overlay .upload:hover,
-.container.profile .block .photo:hover .overlay .upload:focus {
+.container.profile .block .photo:hover .overlay .upload[disabled] {
+  background-color: #ecf0f1;
+}
+.container.profile .block .photo:hover .overlay .upload[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.container.profile .block .photo:hover .overlay .upload:not([disabled]):hover,
+.container.profile .block .photo:hover .overlay .upload:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.container.profile .block .photo:hover .overlay .upload:active {
+.container.profile .block .photo:hover .overlay .upload:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -336,13 +343,20 @@
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   width: 100px;
 }
-.container.media .dropzone .content .upload:hover,
-.container.media .dropzone .content .upload:focus {
+.container.media .dropzone .content .upload[disabled] {
+  background-color: #ecf0f1;
+}
+.container.media .dropzone .content .upload[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.container.media .dropzone .content .upload:not([disabled]):hover,
+.container.media .dropzone .content .upload:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.container.media .dropzone .content .upload:active {
+.container.media .dropzone .content .upload:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;

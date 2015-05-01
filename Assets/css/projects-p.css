@@ -24,19 +24,6 @@
   flex-flow: row wrap;
   align-items: flex-start;
 }
-.center .container.home > .title {
-  border-bottom: 1px solid #ecf0f1;
-  font-weight: bold;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  max-height: 40px;
-  width: 100%;
-  margin-bottom: 25px;
-}
-.center .container.home > .title span {
-  border-bottom: 1px solid #000000;
-  padding: 9px 0;
-}
 .center .container.home .teams {
   width: 70%;
   display: flex;

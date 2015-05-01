@@ -10,12 +10,6 @@
     flex-flow: row wrap;
     align-items: flex-start;
 
-    & > .title {
-        .talent-title();
-        width: 100%;
-        margin-bottom: 25px;
-    }
-
     .teams {
         width: 70%;
         display: flex;
@@ -31,11 +25,7 @@
                 .block-div();
 
                 .title {
-                    border-bottom: 1px solid @CLClouds;
-                    padding-bottom: 6px;
-                    margin-bottom: 12px;
-                    font-weight: bold;
-                    font-size: 14px;
+                    .block-title();
 
                     a:hover {
                         color: @CBPeterRiver;
