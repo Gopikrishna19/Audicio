@@ -1,4 +1,4 @@
-<div class="header" ng-class="isMin ? 'min':''" ng-controller="HeadCtrl">
+<div class="header" ng-class="isMin() ? 'min':''" ng-controller="HeadCtrl">
     <div class="content">
         <div class="logo">Audicio</div>
         <div class="logo special">Audicio</div>

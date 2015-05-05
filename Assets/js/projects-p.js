@@ -3,6 +3,8 @@
 
 var app = angular.module('audicio', ['ngRoute']);
 
+app.directive('breadHeading', breadCrumbHeading);
+
 app.directive('heading', talentHeading);
 
 app.config(function ($routeProvider) {
@@ -13,17 +15,9 @@ app.config(function ($routeProvider) {
         .when('/settings', {
             templateUrl: '/Assets/partials/projects-p/settings.php',
         })
-        .when('/create', { redirectTo: '/create/name' })
-        .when('/c/invite', { redirectTo: '/create/invite' })
-        .when('/c/audition', { redirectTo: '/create/audition' })
-        .when('/create/name', {
-            templateUrl: '/Assets/partials/projects-p/create-1.php',
-        })
-        .when('/create/invite', {
-            templateUrl: '/Assets/partials/projects-p/create-2.php',
-        })
-        .when('/create/audition', {
-            templateUrl: '/Assets/partials/projects-p/create-3.php',
+        .when('/create', { redirectTo: '/create/team' })
+        .when('/create/team', {
+            templateUrl: '/Assets/partials/projects-p/create-team.php',
         })
         .otherwise({
             redirectTo: '/home'

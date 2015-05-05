@@ -64,3 +64,28 @@ function talentHeading() {
         }
     }
 }
+
+function breadCrumbHeading() {
+    return {
+        link: function (scope, element, attrs) {
+            var base = "/" + (attrs.base ? attrs.base : "");
+            base = (attrs.hash ? "#" : base);
+            var path = JSON.parse(attrs.path.replace(/\'/g, "\""));
+            var string = "";
+
+            for (var i = 0; i < path.length; ++i) {                
+                if (path[i] instanceof Array) {
+                    if (!path[i][1]) path[i][1] = "";
+                    string += "<a href='" + base + "/" + path[i][1] + "'>" + path[i][0] + "</a>";
+                } else if (!(path[i] instanceof Array) && typeof path[i] == "string") {
+                    string += "<a href='" + base + "'>" + path[i] + "</a>";
+                } else {
+                    throw new TypeError("invalid type: " + typeof path);
+                }
+            }
+            string += "<span>" + attrs.breadHeading + "</span>";
+            element.addClass('title');
+            element.html(string);
+        }
+    }
+}

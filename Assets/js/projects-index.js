@@ -3,6 +3,8 @@
 
 var app = angular.module('audicio', ['ngRoute']);
 
+app.directive('breadHeading', breadCrumbHeading);
+
 app.directive('heading', talentHeading);
 
 app.config(function ($routeProvider) {

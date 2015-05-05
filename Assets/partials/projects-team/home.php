@@ -1,7 +1,7 @@
 <div class="container home">
     <div class="title-w">
         <a href="#/tasks">View Team Tasks</a>
-        <div heading="Advertisement Team"></div>
+        <div bread-heading="Advertisement Team" path="['All Projects',['Project 3', 'p/3']]" base="projects"></div>
     </div>
     <div class="block">
         <div class="title">Team Description</div>

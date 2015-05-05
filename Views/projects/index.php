@@ -3,7 +3,6 @@
         <div class="logo">Audicio</div>
         <div class="menu-bar">
             <ul class="menu">
-                <li ng-show="isShowable('all')"><a href="#/list">All Projects</a></li>
                 <li><a href="/profile">My Profile</a></li>
             </ul>
         </div>

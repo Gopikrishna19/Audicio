@@ -60,6 +60,7 @@
 }
 .center .container > .title,
 .center .container > .title-w .title {
+  padding: 12px;
   border-bottom: 1px solid #ecf0f1;
   font-weight: bold;
   margin-bottom: 12px;
@@ -73,11 +74,23 @@
   border-bottom: 1px solid #000000;
   padding: 9px 0;
 }
+.center .container > .title a,
+.center .container > .title-w .title a {
+  color: #3498db;
+}
+.center .container > .title a:hover,
+.center .container > .title-w .title a:hover {
+  color: #2980b9;
+}
+.center .container > .title a:after,
+.center .container > .title-w .title a:after {
+  content: "\bb";
+  margin: 0 12px;
+}
 .center .container > .title-w {
   width: 100%;
-  padding: 12px;
 }
-.center .container > .title-w a {
+.center .container > .title-w > a {
   float: right;
   background-color: #ffffff;
   border-bottom: 2px solid #ecf0f1;
@@ -89,22 +102,22 @@
   -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
-  margin: 0;
+  margin: 6px 12px 0;
 }
-.center .container > .title-w a[disabled] {
+.center .container > .title-w > a[disabled] {
   background-color: #ecf0f1;
 }
-.center .container > .title-w a[disabled]:hover {
+.center .container > .title-w > a[disabled]:hover {
   border-bottom-color: #c0392b;
   cursor: not-allowed;
 }
-.center .container > .title-w a:not([disabled]):hover,
-.center .container > .title-w a:not([disabled]):focus {
+.center .container > .title-w > a:not([disabled]):hover,
+.center .container > .title-w > a:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container > .title-w a:not([disabled]):active {
+.center .container > .title-w > a:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -199,7 +212,9 @@
   margin-left: 12px;
 }
 .center .container.create .block .field a.cancel:hover,
-.center .container.create .block .field a.skip:hover {
+.center .container.create .block .field a.skip:hover,
+.center .container.create .block .field a.cancel:focus,
+.center .container.create .block .field a.skip:focus {
   text-decoration: underline;
   color: #c0392b;
 }

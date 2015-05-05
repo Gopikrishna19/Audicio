@@ -1,7 +1,7 @@
 <div class="container home">
     <div class="title-w">
         <a href="#/create">Create New Team</a>
-        <div heading="Project 3"></div>
+        <div bread-heading="Project 3" path="['All Projects']" base="projects"></div>
     </div>
     <div class="teams">
         <div class="team">

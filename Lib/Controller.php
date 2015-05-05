@@ -4,6 +4,9 @@
     class Controller{
         public function __construct(){
             $this->view = new View();
+            $this->view->css[] = "master";
+            $this->view->js[] = "jquery";
+            $this->view->js[] = "moment";
         }
 
         public function loadModel($controller){

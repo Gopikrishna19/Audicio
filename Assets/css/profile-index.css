@@ -376,7 +376,8 @@ a:active {
   color: #e74c3c;
   cursor: pointer;
 }
-.center .container.news .entries .entry.invite .options button.decline:hover {
+.center .container.news .entries .entry.invite .options button.decline:hover,
+.center .container.news .entries .entry.invite .options button.decline:focus {
   text-decoration: underline;
   color: #c0392b;
 }
@@ -494,7 +495,11 @@ a:active {
 .center .container.auditions .sidebar button.back:hover,
 .center .container.audition .sidebar button.back:hover,
 .center .container.auditions .sidebar a.back:hover,
-.center .container.audition .sidebar a.back:hover {
+.center .container.audition .sidebar a.back:hover,
+.center .container.auditions .sidebar button.back:focus,
+.center .container.audition .sidebar button.back:focus,
+.center .container.auditions .sidebar a.back:focus,
+.center .container.audition .sidebar a.back:focus {
   text-decoration: none;
   color: #c0392b;
 }

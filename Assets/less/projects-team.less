@@ -8,7 +8,7 @@
 
     .block {
         .block-div();
-        margin-bottom: 25px;
+        margin: 0 12px 25px;
 
         .title {
             .block-title();
@@ -50,6 +50,244 @@
                     display: block;
                     text-align: center;
                     padding: 12px 0;
+                }
+            }
+        }
+    }
+}
+
+.center .container.tasks {
+    .tasks {
+        .block-div();
+        margin: 0 12px;
+
+        .create .fields {
+            height: 50px;
+            display: flex;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin-bottom: 12px;
+            justify-content: flex-end;
+
+            & > * {
+                display: block;
+                margin-right: 12px;
+                overflow: hidden;
+                font-size: 14px;
+                -moz-transition: all .3s;
+                -o-transition: all .3s;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 7px 12px;
+                box-shadow: 0 0 2px @CLSilver;
+                border-bottom: 2px solid @CLClouds;
+
+                &:focus {
+                    border-bottom-color: @CBPeterRiver;
+                }
+
+                &.task-assign {
+                    -ms-flex: 0 1 200px;
+                    flex: 0 1 200px;
+                }
+
+                &.task-input {
+                    -ms-flex: 1 1 200px;
+                    flex: 1 1 200px;
+                    margin-left: 25px;
+
+                    &:after {
+                        .upload-btn();
+                        content: "hello";
+                    }
+                }
+            }
+
+            button {
+                &.btn {
+                    .upload-btn();
+                    margin: 0;
+                    margin-right: 12px;
+
+                    &.c {
+                        width: 0;
+                        padding: 8px 0;
+                        margin-right: 0;
+                    }
+
+                    &:not(.c) {
+                        box-shadow: 0 0 2px @CLSilver;
+                    }
+                }
+
+                &.cancel {
+                    .cancel-link();
+                }
+            }
+
+            &.short {
+                & > * {
+                    margin-right: 0;
+                    width: 0;
+                }
+
+                input {
+                    -ms-flex: 0 1 0;
+                    flex: 0 1 0;
+                    padding: 7px 0;
+                }
+
+                button {
+                    padding: 8px 0;
+
+                    &.btn.c {
+                        padding: 8px 12px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .on-going {
+            margin-bottom: 25px;
+        }
+
+        .head {
+            display: flex;
+            padding-bottom: 6px;
+            border-bottom: 1px solid @CLClouds;
+            margin-bottom: 6px;
+
+            .col {
+                font-size: 14px;
+                color: @CLSilver;
+
+                &.c1 {
+                    width: 45px;
+                    margin-left: 34px;
+                }
+
+                &.c2 {
+                    width: 100px;
+                }
+            }
+        }
+
+        .empty {
+            margin-left: 180px;
+            color: @CGrAsbestos;
+            font-size: 14px;
+        }
+
+        .task {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+
+            & > div {
+                margin: 0 3px;
+            }
+
+            .controls {
+                width: 80px;
+                height: 30px;
+                text-align: center;
+                margin-left: -60px;
+                background-color: @CPWhite;
+                padding: 3px;
+                box-shadow: -2px 0 3px -1px @CLSilver;
+                border-radius: 15px 0 0 15px;
+                opacity: 0;
+
+                button {
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    background-size: 70%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    opacity: .5;
+                    cursor: pointer;
+
+                    &.edit {
+                        background-image: url(../img/edit.png);
+                    }
+
+                    &.delete {
+                        margin-left: 3px;
+                        background-image: url(../img/delete.png);
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:hover .controls {
+                opacity: 1;
+            }
+
+            .check {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                margin: 7px 20px;
+                box-shadow: 0 0 1px @CLSilver;
+                cursor: pointer;
+            }
+
+            .date {
+                width: 100px;
+                font-size: 14px;
+                margin: 7px 0;
+                cursor: default;
+            }
+
+            .content {
+                -ms-flex: 1;
+                flex: 1;
+                margin-top: 7px;
+                cursor: default;
+
+                .person {
+                    font-weight: bold;
+                    color: @CBPeterRiver;
+                    font-size: 14px;
+                    margin-left: 6px;
+
+                    &:before {
+                        content: "-";
+                        margin-right: 6px;
+                    }
+                }
+            }
+
+            &.done {
+                color: @CGrConcrete;
+
+                .content {
+                    text-decoration: line-through;
+                }
+
+                .check {
+                    box-shadow: none;
+                    background-image: url(../img/tick-d.png);
+                    background-size: 100% 100%;
+                }
+
+                .controls {
+                    width: 40px;
+                    margin-left: -20px;
+
+                    button.edit {
+                        display: none;
+                    }
                 }
             }
         }

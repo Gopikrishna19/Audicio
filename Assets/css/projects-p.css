@@ -160,4 +160,7 @@
   font-weight: bold;
   margin-bottom: 25px;
 }
+.center .container.create .block {
+  margin: 0 12px 25px;
+}
 /*# sourceMappingURL=projects-p.css.map */

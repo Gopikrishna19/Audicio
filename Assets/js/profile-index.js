@@ -33,7 +33,7 @@ app.value('categories', talentCategories());
 
 app.controller('HeadCtrl', function ($scope, $location) {
     $scope.menu = ['news', 'auditions', 'projects', 'profile'];
-    $scope.isMin = "/profile" != $location.path();
+    $scope.isMin = function () { return "/profile" != $location.path(); };
     $scope.isActive = function (route) {
         return '/' + route == $location.path();
     }

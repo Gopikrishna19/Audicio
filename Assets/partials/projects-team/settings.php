@@ -1,3 +1,3 @@
 <div class="container settings">
-    <div heading="Settings"></div>
+    <div bread-heading="Settings" path="[['Advertisement Team', 'home']]" hash="true"></div>
 </div>
