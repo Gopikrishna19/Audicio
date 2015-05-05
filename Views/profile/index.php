@@ -7,7 +7,7 @@
         <div class="menu-bar">
             <ul class="menu">
                 <li ng-repeat="m in menu">
-                    <a href="#{{m}}" ng-class="{active:isActive(m)}" ng-click="updateMin(m)">{{m}}</a>
+                    <a href="#{{m}}" ng-class="{active:isActive(m)}">{{m}}</a>
                 </li>
             </ul>
         </div>

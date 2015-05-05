@@ -37,9 +37,9 @@ app.controller('HeadCtrl', function ($scope, $location) {
     $scope.isActive = function (route) {
         return '/' + route == $location.path();
     }
-    $scope.updateMin = function (route) {
-        $scope.isMin = (route != "profile");
-    }
+    //$scope.updateMin = function (route) {
+    //    $scope.isMin = (route != "profile");
+    //}
 })
 
 app.controller('NewsCtrl', function ($scope) {
