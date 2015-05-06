@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Assets/js/aws-sdk.js"></script>
+    <style>
+        #filedrag {
+            display: none;
+            font-weight: bold;
+            text-align: center;
+            padding: 1em 0;
+            margin: 1em 0;
+            color: #555;
+            border: 2px dashed #555;
+            border-radius: 7px;
+            cursor: default;
+        }
+
+            #filedrag.hover {
+                color: #f00;
+                border-color: #f00;
+                border-style: solid;
+                box-shadow: inset 0 3px 4px #888;
+            }
+
+        #container .item {
+            margin: 12px;
+        }
+
+            #container .item .name {
+                display: inline-block;
+                width: 200px;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            #container .item .progress {
+                display: inline-block;
+                margin-left: 12px;
+                width: 200px;
+                height: 1.2em;
+                box-shadow: inset 0 0 3px #DDD;
+            }
+
+                #container .item .progress .bar {
+                    display: block;
+                    width: 0;
+                    height: 100%;
+                    background-color: #0A8;
+                }
+    </style>
+</head>
+<body>
+    <input type="file"><button>Upload</button>
+    <div id="container"></div>
+    <!--<form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>HTML File Upload</legend>
+            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000">
+            <div>
+                <div id="messages"></div>
+                <label for="fileselect">Files to upload:</label>
+                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple">
+                <div id="filedrag">or drop files here</div>
+            </div>
+            <div id="submitbutton">
+                <button type="submit">Upload Files</button>
+            </div>
+        </fieldset>
+    </form>-->
+    <!--<script>
+        // getElementById
+        function $id(id) {
+            return document.getElementById(id);
+        }
+
+        //
+        // output information
+        function Output(msg) {
+            var m = $id("messages");
+            m.innerHTML = msg + m.innerHTML;
+        }
+
+        // call initialization file
+        if (window.File && window.FileList && window.FileReader) {
+            Init();
+        }
+
+        //
+        // initialize
+        function Init() {
+
+            var fileselect = $id("fileselect"),
+                filedrag = $id("filedrag"),
+                submitbutton = $id("submitbutton");
+
+            // file select
+            fileselect.addEventListener("change", FileSelectHandler, false);
+
+            // is XHR2 available?
+            var xhr = new XMLHttpRequest();
+            if (xhr.upload) {
+
+                // file drop
+                filedrag.addEventListener("dragover", FileDragHover, false);
+                filedrag.addEventListener("dragleave", FileDragHover, false);
+                filedrag.addEventListener("drop", FileSelectHandler, false);
+                filedrag.style.display = "block";
+
+                // remove submit button
+                submitbutton.style.display = "none";
+            }
+
+        }
+
+        // file drag hover
+        function FileDragHover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.target.className = (e.type == "dragover" ? "hover" : "");
+        }
+
+        // file selection
+        function FileSelectHandler(e) {
+
+            // cancel event and hover styling
+            FileDragHover(e);
+
+            // fetch FileList object
+            var files = e.target.files || e.dataTransfer.files;
+
+            // process all File objects
+            for (var i = 0, f; f = files[i]; i++) {
+                ParseFile(f);
+            }
+
+        }
+
+        function ParseFile(file) {
+            // display text
+            if (file.type.indexOf("text") == 0) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    Output(
+                        "<p><strong>" + file.name + ":</strong></p><pre>" +
+                        e.target.result.replace(/</g, "&lt;").replace(/>/g, "&gt;") +
+                        "</pre>"
+                    );
+                }
+                reader.readAsText(file);
+            } else if (file.type.indexOf("image") == 0) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    Output(
+                        "<p><strong>" + file.name + ":</strong><br />" +
+                        '<img src="' + e.target.result + '" /></p>'
+                    );
+                }
+                reader.readAsDataURL(file);
+            } else {
+                Output(
+                    "<p>File information: <strong>" + file.name +
+                    "</strong> type: <strong>" + file.type +
+                    "</strong> size: <strong>" + file.size +
+                    "</strong> bytes</p>"
+                    );
+            }
+        }
+    </script>-->
+    <script>
+        AWS.config.update({
+            accessKeyId: 'AKIAIEZRBUZXZRPSUDXA',
+            secretAccessKey: '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'
+        });
+        AWS.config.region = 'us-west-2';
+        window.BucketName = 'audicio-s3-bucket';
+
+        var s3 = new AWS.S3({ params: { Bucket: BucketName } });
+
+        var upload = document.getElementsByTagName('button')[0];
+        var fileIp = document.querySelectorAll('input[type=file]')[0];
+        upload.onclick = function () {
+            var files = fileIp.files;
+            if (files) for (i in files) {
+                if (typeof (f = files[i]) == "object") {
+                    var params = { Key: f.name, ContentType: f.type, Body: f }, size = f.size;
+                    var item = new Item(f);
+                    item.request = s3.putObject(params).on('httpUploadProgress', function (progress) {
+                        item.progress = Math.ceil(progress.loaded / size * 10000) / 100;
+                    });
+                    item.request.send(function (err, data) {
+                        if (err) console.log(err);
+                        else {
+                            var url = s3.getSignedUrl('getObject', { Key: params.Key });
+                            url = url.split("?")[0];
+                            console.log(url);
+                        }
+                    });                    
+                }
+            }
+        }
+
+        var Item = function (file) {
+            var _name = file.name;
+            var _elebar = null;
+            var _request = null;
+            var _eleitem = null;
+
+            Object.defineProperties(this, {
+                init: {
+                    value: function () {
+                        var sName = document.createElement('span'),
+                            sProgress = document.createElement('span'),
+                            bCancel = document.createElement('button'),
+                            dItem = document.createElement('div');
+
+                        sName.className = "name";
+                        sName.innerHTML = _name;
+
+                        _elebar = document.createElement('span');
+                        _elebar.className = "bar";
+
+                        sProgress.className = "progress";
+                        sProgress.appendChild(_elebar);
+
+                        bCancel.innerHTML = "Cancel";
+                        bCancel.onclick = function () { _request.abort(); }
+
+                        dItem.className = "item";
+                        dItem.appendChild(sName);
+                        dItem.appendChild(sProgress);
+                        dItem.appendChild(bCancel);
+
+                        document.getElementById('container').appendChild(dItem);
+                        _eleitem = dItem;
+                    }
+                },
+                name: {
+                    get: function () { return _name; }
+                },
+                progress: {
+                    set: function (v) {
+                        _elebar.style.width = parseFloat(v) + "%";
+                    }
+                },
+                request: {
+                    get: function () { return _request; },
+                    set: function (v) { _request = v; }
+                }
+            });
+
+            this.init();
+        }
+    </script>
+</body>
+</html>

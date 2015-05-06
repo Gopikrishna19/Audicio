@@ -15,6 +15,8 @@
 
         public function config() {
             $this->view->css[] = "profile-config";
+            $this->view->js[] = "aws-sdk";
+            $this->view->js[] = "profile-media";
             $this->view->js[] = "profile-config";
             $this->view->renderView(__CLASS__, __FUNCTION__);
         }

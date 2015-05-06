@@ -68,6 +68,7 @@ app.controller('MainCtrl', function ($scope, $location) {
     }
 
     $scope.onPage = function (loc) {
+        if ($location.path() == "/media") window.Media.init();
         if ('/' + loc == $location.path()) {
             $scope.index = $scope.steps.indexOf(loc);
             if ($scope.index == $scope.steps.length - 1) {

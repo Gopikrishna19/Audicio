@@ -5,8 +5,9 @@
     top: 0;
     width: 100%;
     left: 0;
+    z-index: 10;
 
-    .content {        
+    .content {
         .center-it();
 
         .controls {
@@ -134,7 +135,7 @@
         .sub-title {
             margin-bottom: 12px;
             font-weight: bold;
-            font-size: 14px;            
+            font-size: 14px;
         }
 
         .entries {
@@ -311,13 +312,19 @@
 .container.media {
     .dropzone {
         display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        min-height: 400px;
         border: 3px dashed @CLClouds;
         background-image: url(../img/upload.png);
         background-repeat: no-repeat;
         background-position: center center;
+
+        &.on {
+            border-color: @CGrAsbestos;
+        }
 
         .content {
             text-align: center;
@@ -331,6 +338,117 @@
             .upload {
                 .upload-btn();
                 width: 100px;
+                position: relative;
+                cursor: default;
+
+                input.file {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                    font-size: 25px;
+                }
+            }
+        }
+
+        &.multi {
+            .item {
+                width: 100px;
+                margin: 12px;
+                padding-top: 80px;
+                background-repeat: no-repeat;
+                background-position: center 25px;
+                background-color: @CPWhite;
+                padding: 80px 3px 3px;
+                text-align: center;
+                position: relative;
+                box-shadow: 0 0 1px @CLSilver;
+                -moz-transition: all .3s;
+                -o-transition: all .3s;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+
+
+                &.video {
+                    background-image: url(../img/video.png);
+                }
+
+                &.image {
+                    background-image: url(../img/image.png);
+                }
+
+                .name {
+                    padding: 3px;
+                    display: block;
+                    font-size: 12px;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                button {
+                    background-image: url(../img/cancel.png);
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid @CPWhite;
+                    box-shadow: 0 0 3px @CLClouds;
+                    background-size: 80% 80%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    border-radius: 11px;
+                    background-color: @CIMidnightBlue;
+                    -moz-transition: all .3s;
+                    -o-transition: all .3s;
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+                }
+
+                .progress {
+                    height: 8px;
+                    margin: 6px 8px;
+                    display: block;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    box-shadow: 0 0 1px @CLSilver inset;
+
+                    .bar {
+                        display: block;
+                        width: 1%;
+                        height: 100%;
+                        background-color: @CBPeterRiver;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0 1px 3px @CLSilver;
+
+                    button {
+                        opacity: 0.8;
+
+                        &:hvoer {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                width: 100%;
+                order: 0;
+                align-self: flex-start;
+
+                & > * {
+                    display: inline-block;
+                }
             }
         }
     }
