@@ -121,7 +121,7 @@ var uploadItem = function (item) {
     var xhr = new XMLHttpRequest();
     xhr.addEventListener('load', function () {
         if (xhr.status == 200) {
-            item.progress = 100;
+            
         } else {
             console.error({ status: xhr.status, response: xhr.response });
         }

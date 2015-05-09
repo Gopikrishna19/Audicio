@@ -5,8 +5,8 @@
             'default_settings' => array(
                 'params' => array(
                     'credentials' => array(
-                        'key' => 'AKIAJYK7OB77GD45UUFA',
-                        'secret' => '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'
+                        'key' => AWS_KEY,
+                        'secret' => AWS_SECRET
                     ),
                     'region' => 'us-west-2'
                 )

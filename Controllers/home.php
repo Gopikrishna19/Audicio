@@ -38,6 +38,7 @@
             if($user->verify == 0) {
                 $this->view->msgs[] = "Pending Verification";
                 $this->view->renderView(__CLASS__, __FUNCTION__);
+                $this->sendVerifyMail($email);
             } else {
                 Session::init();
                 Session::set("a_user_id", $user->id);
@@ -49,6 +50,21 @@
                     header("Location: /profile");
                 }
             }
+        }
+
+        public function sendVerifyMail($email) {
+            include_once "Aws/ses.php";
+            $link = Audicio."/home/verify/".base64_encode($email);
+            $msg  = "";
+            $msg .= "<h1 style='color:#3498db'><img src='audicio-s3-bucket.s3.amazonaws.com/assets/logo.png' alt='Audicio'></h1>";
+            $msg .= "<h3>Welcome to Audicio</h3>";
+            $msg .= "<p>We welcome you to experience Audicio. You are one click away.</p>";
+            $msg .= "<p>Please click <a href='$link'>here</a> to verify your email address";
+            $msg .= "<p>Or paste the following link: <p>";
+            $msg .= "<a href='$link'>$link</a>";
+            $msg .= "<p>If you are not the intended recipient please ignore this.</p>";
+
+            sendEmail([$email], "Audicio - verify email", $msg);
         }
     }
 ?>
