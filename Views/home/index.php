@@ -4,7 +4,7 @@
         <div class="form">
             <form class="login">
                 <div class="title">Log In</div>
-                <input class="txt uname" type="text" placeholder="Username" autofocus="true">
+                <input class="txt uname" type="text" placeholder="Email" autofocus="true">
                 <input class="txt upass" type="password" placeholder="Password">
                 <div class="lbtn gp log"></div>
                 <div class="lbtn fb log"></div>

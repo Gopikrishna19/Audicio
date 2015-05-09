@@ -39,7 +39,7 @@ var lGoogle = {
         gapi.client.load('plus', 'v1').then(function () {
             var request = gapi.client.plus.people.get({ 'userId': 'me' });
             request.then(function (resp) {
-                redirect(resp.result.emails[0].value);
+                redirect(resp.result.emails[0].value, "gp");
             }, function (reason) {
                 console.log('Error: ', reason.result.error.message);
             });
@@ -53,7 +53,7 @@ var lGoogle = {
             js = d.createElement(s); js.id = id;
             js.src = "//apis.google.com/js/client:platform.js?onload=__g_callback";
             fjs.parentNode.insertBefore(js, fjs);
-        } (document, 'script', 'gapi-js'));
+        }(document, 'script', 'gapi-js'));
     }
 };
 
@@ -63,7 +63,7 @@ var lFacebook = {
     checkAuth: function () {
         FB.getLoginStatus(lFacebook.handleAuthResult);
     },
-    handleAuthResult: function (result) {        
+    handleAuthResult: function (result) {
         if (result && result.status == 'connected') {
             lFacebook.getUserInfo();
         } else {
@@ -75,7 +75,7 @@ var lFacebook = {
     },
     getUserInfo: function () {
         FB.api('/me', function (resp) {
-            redirect(resp.email);
+            redirect(resp.email, "fb");
         })
     },
     init: function () {
@@ -94,7 +94,7 @@ var lFacebook = {
             js = d.createElement(s); js.id = id;
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
-        } (document, 'script', 'fapi-js'));
+        }(document, 'script', 'fapi-js'));
     }
 };
 
@@ -103,6 +103,15 @@ function initAPIs() {
     lFacebook.init();
 }
 
-function redirect(email) {
-    window.location.href = '/profile/config';
+function redirect(email, method) {
+    var form = document.createElement("form");
+    form.method = 'post';
+    form.action = '/home/login?m=' + method;
+
+    var ipEmail = document.createElement("input");
+    ipEmail.name = "email";
+    ipEmail.value = email;
+
+    form.appendChild(ipEmail);
+    form.submit();
 }

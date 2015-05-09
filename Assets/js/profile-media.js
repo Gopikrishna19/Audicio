@@ -16,6 +16,7 @@ var FileItems = {
         this.update();
     },
     update: function () {
+        console.log(this.length);
         if (this.length == 0)
             $(".container.media .dropzone").removeClass('multi');
         else
@@ -77,7 +78,7 @@ var Item = function (file, container) {
             set: function (v) {
                 var p = parseFloat(v), self = this;
                 _elebar.style.width = p + "%";
-                if (p == 100) setTimeout(function () {
+                if (p >= 100) setTimeout(function () {
                     self.remove.call(self);
                 }, 1000);
             }
@@ -107,8 +108,6 @@ var Item = function (file, container) {
     this.init();
 }
 
-var s3 = null;
-
 var fileDragOver = function (e) {
     e.stopPropagation();
     e.preventDefault();
@@ -117,20 +116,29 @@ var fileDragOver = function (e) {
 }
 
 var uploadItem = function (item) {
-    var f = item.file, type = f.type.split("/")[0];
-    var params = { Key: type + "/" + f.name, ContentType: f.type, Body: f }, size = f.size;
-    item.request = s3.putObject(params);
-    item.request.on('httpUploadProgress', function (progress) {
-        item.progress = Math.ceil(progress.loaded / size * 10000) / 100;
-    });
-    item.request.send(function (err, data) {
-        if (err) console.log(err);
-        else {
-            var url = s3.getSignedUrl('getObject', { Key: params.Key });
-            url = url.split("?")[0];
-            console.log(url);
+    var f = item.file, type = f.type.split("/")[0], size = f.size;
+
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', function () {
+        if (xhr.status == 200) {
+            item.progress = 100;
+        } else {
+            console.error({ status: xhr.status, response: xhr.response });
         }
     });
+
+    xhr.upload.addEventListener('progress', function (progress) {
+        if (progress.lengthComputable) {
+            item.progress = Math.ceil(progress.loaded / size * 10000) / 100;
+        }
+    });
+
+    var time = new Date().getTime();
+    var userId = 1;
+    var fname = time + "-" + userId + "-" + f.name;
+
+    xhr.open('PUT', 'http://audicio-s3-bucket.s3.amazonaws.com/' + type + "/" + fname, true);
+    xhr.send(f);
 }
 
 var fileSelection = function (e) {
@@ -166,15 +174,6 @@ window.Media.init = function () {
     } else {
         console.log("In Media");
 
-        AWS.config.update({
-            accessKeyId: 'AKIAIEZRBUZXZRPSUDXA',
-            secretAccessKey: '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'
-        });
-        AWS.config.region = 'us-west-2';
-        window.BucketName = 'audicio-s3-bucket';
-
-        s3 = new AWS.S3({ params: { Bucket: BucketName } });
-
         fileselect = fileselect[0];
         filedrop = filedrop[0];
 
@@ -193,7 +192,7 @@ window.Media.init = function () {
 
         window.onbeforeunload = function () {
             if (FileItems.length > 0) {
-                return "Do you want to leave?"
+                return "Your files are still uploading ...";
             }
         }
     }

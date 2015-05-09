@@ -65,6 +65,7 @@ app.controller('NewsCtrl', function ($scope) {
                 for (m = 0; m < $scope.filters.length; $scope.isOn[m++] = '');
             }
             $scope.isOn[i] = $scope.isOn[i] == 'on' ? '' : 'on';
+            if ($scope.isOn.indexOf('on') < 0) $scope.isOn[i] = 'on';
         }
         $scope.updateOn(i);
     }

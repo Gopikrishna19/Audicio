@@ -1,4 +1,5 @@
 <?php
+    require_once "Config.php";
     require_once "Controllers/error.php";
 
     function __autoload($class) {
