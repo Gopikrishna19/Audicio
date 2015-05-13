@@ -1,0 +1,40 @@
+﻿@import "functions.less";
+
+@head-height: 50px;
+@head-margin: 25px;
+
+.flex {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .block {
+        .block-div();
+        width: 600px;
+
+        .title {
+            .block-title();
+            color: @CBPeterRiver;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        .right {
+            text-align: right;
+
+            .status {
+                display: inline-block;
+                margin-right: 12px;
+            }
+
+            button {
+                .upload-btn();
+            }
+        }
+    }
+}

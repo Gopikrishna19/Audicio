@@ -7,6 +7,8 @@
     align-items: flex-start;
 
     .block {
+        flex-grow: 1;
+        flex-basis: 60%;
         .block-div();
         margin: 0 12px 25px;
 
@@ -49,8 +51,54 @@
                 .name {
                     display: block;
                     text-align: center;
-                    padding: 12px 0;
+                    padding: 12px 6px;
+                    font-size: 12px;
+                    white-space: nowrap;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                 }
+            }
+        }
+    }
+}
+
+.center .container.settings {
+    .block .member {
+        padding: 6px;
+        box-shadow: 0 0 1px @CLClouds;
+        overflow: auto;
+        position: relative;
+        -moz-transition: box-shadow .2s;
+        -o-transition: box-shadow .2s;
+        -webkit-transition: box-shadow .2s;
+        transition: box-shadow .2s;
+
+        &:hover {
+            box-shadow: 0 0 3px @CLSilver;
+            z-index: 25;
+        }
+
+        img {
+            height: 36px;
+            width: 36px;
+            float: left;
+            margin-right: 25px;
+        }
+
+        .name {
+            line-height: 36px;
+        }
+
+        .btn {
+            .upload-btn();
+            margin: 0;
+            margin-left: 12px;
+            float: right;
+
+            &.r:hover {
+                border-bottom-color: @CRPomegrante;
             }
         }
     }
@@ -81,7 +129,7 @@
                 transition: all .3s;
             }
 
-            input {
+            input, select {
                 font-size: 16px;
                 padding: 7px 12px;
                 box-shadow: 0 0 2px @CLSilver;
@@ -136,7 +184,7 @@
                     width: 0;
                 }
 
-                input {
+                input, select {
                     -ms-flex: 0 1 0;
                     flex: 0 1 0;
                     padding: 7px 0;
@@ -291,5 +339,160 @@
                 }
             }
         }
+    }
+}
+
+.x-candidate() {
+    box-shadow: 0 0 2px @CLClouds;
+    padding: 12px;
+
+    .status {
+        font-style: italic;
+        color: @CLSilver;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+    button {
+        float: right;
+
+        &.btn {
+            .upload-btn();
+            margin: 0;
+            margin-right: 12px;
+        }
+
+        &.cancel {
+            display: block;
+            position: relative;
+            height: 20px;
+            width: 20px;
+            margin: 6px 12px;
+
+            i {
+                position: absolute;
+                height: 100% * sqrt(2);
+                top: 0;
+                left: 50%;
+                width: 1px;
+                background-color: @CGrAsbestos;
+
+                &.x {
+                    -moz-transform: rotateZ(45deg);
+                    -ms-transform: rotateZ(45deg);
+                    -o-transform: rotateZ(45deg);
+                    -webkit-transform: rotateZ(45deg);
+                    transform: rotateZ(45deg);
+                }
+
+                &.xx {
+                    -moz-transform: rotateZ(-45deg);
+                    -ms-transform: rotateZ(-45deg);
+                    -o-transform: rotateZ(-45deg);
+                    -webkit-transform: rotateZ(-45deg);
+                    transform: rotateZ(-45deg);
+                }
+            }
+
+            &:hover i {
+                background-color: @CRPomegrante;
+            }
+        }
+    }
+
+    a {
+        line-height: 36px;
+        color: @CBPeterRiver;
+        font-weight: bold;
+        margin-left: 12px;
+
+        &:hover {
+            border-bottom: 1px dotted;
+        }
+    }
+}
+
+.center .container.auditions {
+    .block {
+        .block-div();
+        margin-bottom: 25px;
+
+        .invite {
+            .x-candidate();
+        }
+
+        .title {
+            .block-title();
+        }
+
+        .audition {
+            box-shadow: 0 0 2px @CLClouds;
+            overflow: auto;
+            padding: 12px;
+
+            .btn {
+                .upload-btn();
+                margin: 0;
+                margin-left: 12px;
+                float: right;
+            }
+
+            span {
+                line-height: 36px;
+
+                &.count {
+                    float: right;
+                    color: @CLSilver;
+                    font-size: 14px;
+                    font-style: italic;
+                    margin-right: 25px;
+                    cursor: default;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            a.name {
+                line-height: 36px;
+                color: @CBPeterRiver;
+                font-weight: bold;
+                margin-left: 12px;
+
+                &:hover {
+                    border-bottom: 1px dotted;
+                }
+            }
+        }
+    }
+}
+
+.center .container.audition {
+    .block {
+        .block-div();
+        margin-bottom: 25px;
+
+        > .title {
+            .block-title();
+        }
+
+        .gact {
+            text-align: right;
+
+            button {
+                .upload-btn();
+            }
+        }
+
+        .candidate {
+            .x-candidate();
+        }
+    }
+}
+
+.center .container.invite {
+    .block .invite {
+        .x-candidate();
     }
 }

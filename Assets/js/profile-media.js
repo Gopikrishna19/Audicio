@@ -1,5 +1,5 @@
 ﻿/// <reference path='jquery.js' />
-
+/// <reference path='common.js' />
 var FileItems = {
     _fileItems: [],
     get items() {
@@ -115,30 +115,13 @@ var fileDragOver = function (e) {
     else e.target.classList.remove("on");
 }
 
-var uploadItem = function (item) {
-    var f = item.file, type = f.type.split("/")[0], size = f.size;
-
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', function () {
-        if (xhr.status == 200) {
-            
-        } else {
-            console.error({ status: xhr.status, response: xhr.response });
-        }
-    });
-
-    xhr.upload.addEventListener('progress', function (progress) {
-        if (progress.lengthComputable) {
-            item.progress = Math.ceil(progress.loaded / size * 10000) / 100;
-        }
-    });
-
-    var time = new Date().getTime();
-    var userId = 1;
-    var fname = time + "-" + userId + "-" + f.name;
-
-    xhr.open('PUT', 'http://audicio-s3-bucket.s3.amazonaws.com/' + type + "/" + fname, true);
-    xhr.send(f);
+var uploadItem = function (item) {    
+    var f = item.file, size = f.size;
+    var time = new Date().getTime();    
+    var fname = time + "-" + a_user_id + "-" + f.name;
+    uploadFile(f, fname, function (p) {
+        item.progress = p;
+    })    
 }
 
 var fileSelection = function (e) {
@@ -164,10 +147,12 @@ var fileSelection = function (e) {
 
 window.Media = {};
 window.Media.init = function () {
+    console.log('Init media');
     var filedrop = $(".container.media .dropzone"),
         fileselect = $(".upload input.file", filedrop);
 
     if (filedrop.length == 0) {
+        console.log('No valid media found');
         fileselect.unbind();
         filedrop.unbind();
         window.onbeforeunload = null;

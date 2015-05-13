@@ -56,6 +56,24 @@
     }
 }
 
+function uploadFile(f, fname, prg, err) {
+    var size = f.size, type = f.type.split("/")[0];
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.upload.addEventListener('progress', function (progress) {
+        if (progress.lengthComputable && prg) {
+            prg(Math.ceil(progress.loaded / size * 10000) / 100);
+        }
+    });
+
+    xhr.onerror = err;
+
+    xhr.open('PUT', 'http://audicio-s3-bucket.s3.amazonaws.com/user' + a_user_id + "/" + type + "/" + fname, true);
+    xhr.setRequestHeader('x-amz-acl', 'public-read');
+    xhr.send(f);
+}
+
 function talentHeading() {
     return {
         link: function (scope, element, attrs) {
@@ -73,7 +91,7 @@ function breadCrumbHeading() {
             var path = JSON.parse(attrs.path.replace(/\'/g, "\""));
             var string = "";
 
-            for (var i = 0; i < path.length; ++i) {                
+            for (var i = 0; i < path.length; ++i) {
                 if (path[i] instanceof Array) {
                     if (!path[i][1]) path[i][1] = "";
                     string += "<a href='" + base + "/" + path[i][1] + "'>" + path[i][0] + "</a>";
@@ -89,3 +107,5 @@ function breadCrumbHeading() {
         }
     }
 }
+
+function deepCopy(o) { return JSON.parse(JSON.stringify(o)); }

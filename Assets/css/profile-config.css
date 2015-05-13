@@ -104,6 +104,20 @@
 .header .content ul li.on + li .sep {
   background-image: url(../img/stepiw.png);
 }
+.wait-overlay {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  bottom: 0;
+  background-image: url(/Assets/img/hourglass.svg);
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-position: center center;
+  display: none;
+}
+.wait-overlay.on {
+  display: block;
+}
 .container {
   width: 1000px;
   margin: auto;
@@ -205,12 +219,29 @@
   margin-bottom: 0;
   font-size: 14px;
 }
+.container.profile {
+  padding-top: 75px;
+}
 .container.profile .block {
   background-color: #ffffff;
   box-shadow: 0 0 5px #bdc3c7;
   padding: 25px;
   margin-bottom: 25px;
   overflow: auto;
+}
+.container.profile .block.error {
+  background: none;
+  box-shadow: none;
+  color: #c0392b;
+  padding: 0 25px;
+  margin-bottom: 3px;
+}
+.container.profile .block.error li {
+  display: none;
+  line-height: 24px;
+}
+.container.profile .block.error li.on {
+  display: block;
 }
 .container.profile .block .title {
   border-bottom: 1px solid #ecf0f1;
@@ -243,10 +274,7 @@
   -webkit-transition: all .2s;
   transition: all .2s;
 }
-.container.profile .block .photo:hover .overlay {
-  opacity: 1;
-}
-.container.profile .block .photo:hover .overlay .upload {
+.container.profile .block .photo .overlay .upload {
   background-color: #ffffff;
   border-bottom: 2px solid #ecf0f1;
   box-shadow: 0 1px 4px #bdc3c7;
@@ -257,24 +285,40 @@
   -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  position: relative;
+  overflow: hidden;
+  width: 135px;
+  height: 36px;
 }
-.container.profile .block .photo:hover .overlay .upload[disabled] {
+.container.profile .block .photo .overlay .upload[disabled] {
   background-color: #ecf0f1;
 }
-.container.profile .block .photo:hover .overlay .upload[disabled]:hover {
+.container.profile .block .photo .overlay .upload[disabled]:hover {
   border-bottom-color: #c0392b;
   cursor: not-allowed;
 }
-.container.profile .block .photo:hover .overlay .upload:not([disabled]):hover,
-.container.profile .block .photo:hover .overlay .upload:not([disabled]):focus {
+.container.profile .block .photo .overlay .upload:not([disabled]):hover,
+.container.profile .block .photo .overlay .upload:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.container.profile .block .photo:hover .overlay .upload:not([disabled]):active {
+.container.profile .block .photo .overlay .upload:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
+}
+.container.profile .block .photo .overlay .upload .profile-pic {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 135px;
+  height: 36px;
+}
+.container.profile .block .photo:hover .overlay {
+  opacity: 1;
 }
 .container.profile .block .field {
   padding: 6px 0;
@@ -324,6 +368,7 @@
   background-image: url(../img/upload.png);
   background-repeat: no-repeat;
   background-position: center center;
+  margin-bottom: 25px;
 }
 .container.media .dropzone.on {
   border-color: #7f8c8d;
@@ -461,5 +506,10 @@
 }
 .container.media .dropzone.multi .content > * {
   display: inline-block;
+}
+.container.media .hint {
+  font-size: 14px;
+  color: #95a5a6;
+  line-height: 20px;
 }
 /*# sourceMappingURL=profile-config.css.map */

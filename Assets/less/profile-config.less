@@ -108,6 +108,22 @@
     }
 }
 
+.wait-overlay {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    bottom: 0;
+    background-image: url(/Assets/img/hourglass.svg);
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,.2);
+    background-position: center center;
+    display: none;
+
+    &.on {
+        display: block;
+    }
+}
+
 .container {
     width: 1000px;
     margin: auto;
@@ -218,10 +234,29 @@
 }
 
 .container.profile {
+    padding-top: 75px;
+
     .block {
         .block-div();
         margin-bottom: 25px;
         overflow: auto;
+
+        &.error {
+            background: none;
+            box-shadow: none;
+            color: @CRPomegrante;
+            padding: 0 25px;
+            margin-bottom: 3px;
+
+            li {
+                display: none;
+                line-height: 24px;
+
+                &.on {
+                    display: block;
+                }
+            }
+        }
 
         .title {
             border-bottom: 1px solid @CLClouds;
@@ -252,14 +287,28 @@
                 -o-transition: all .2s;
                 -webkit-transition: all .2s;
                 transition: all .2s;
+
+                .upload {
+                    .upload-btn();
+                    position: relative;
+                    overflow: hidden;
+                    width: 135px;
+                    height: 36px;
+
+                    .profile-pic {
+                        font-size: 24px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        width: 135px;
+                        height: 36px;
+                    }
+                }
             }
 
             &:hover .overlay {
                 opacity: 1;
-
-                .upload {
-                    .upload-btn();
-                }
             }
         }
 
@@ -321,6 +370,7 @@
         background-image: url(../img/upload.png);
         background-repeat: no-repeat;
         background-position: center center;
+        margin-bottom: 25px;
 
         &.on {
             border-color: @CGrAsbestos;
@@ -451,5 +501,11 @@
                 }
             }
         }
+    }
+
+    .hint {
+        font-size: 14px;
+        color: @CGrConcrete;
+        line-height: 20px;
     }
 }

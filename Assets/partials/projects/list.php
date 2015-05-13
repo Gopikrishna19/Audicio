@@ -7,27 +7,16 @@
     </div>
     <div class="c c2">
         <div heading="My Projects"></div>
-        <div class="p">
-            <a href="/projects/p/1">Project 1</a>
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu erat, venenatis nec placerat ac,
-                dapibus sit amet mauris. Cras volutpat mattis lobortis. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Integer dapibus placerat magna quis sodales.
-            </p>
+        <div ng-repeat="c in created" class="p">
+            <a ng-href="/projects/p/{{c.id}}">{{c.name}}</a>
+            <p class="desc">{{c.desc}}</p>
         </div>
-        <div class="p"><a href="/projects/p/2">Project 2</a></div>
     </div>
     <div class="c c2">
         <div heading="Committed to"></div>
-        <div class="p">
-            <a href="/projects/p/3">Project 3</a>
-            <p class="desc">
-                Cras sit amet orci laoreet, blandit sapien ac, rhoncus enim. Mauris elit eros, pretium eget massa nec,
-                molestie tristique est. Etiam vel tellus quam. Maecenas facilisis dignissim urna id sodales.
-                Suspendisse est risus, dictum vel pretium ut, dictum a massa. Nullam tempor convallis sodales.
-                Phasellus pellentesque velit non odio tristique fermentum. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Phasellus cursus odio hendrerit placerat tincidunt.
-            </p>
+        <div ng-repeat="c in joined" class="p">
+            <a ng-href="/projects/p/{{c.id}}">{{c.name}}</a>
+            <p class="desc">{{c.desc}}</p>
         </div>
     </div>
 </div>

@@ -1,0 +1,146 @@
+﻿@import "functions.less";
+
+.header {
+    margin-bottom: 25px;
+
+    .content {
+        .center-it();
+
+        .logo {
+            margin-top: 1px;
+            float: left;
+        }
+
+        .menu-bar {
+            float: right;
+
+            .menu {
+                list-style: none;
+                margin-top: 5px;
+
+                li {
+                    float: left;
+
+                    a {
+                        text-align: center;
+                        display: block;
+                        padding: 12px;
+                        color: @CLClouds;
+                        -moz-transition: all .2s;
+                        -o-transition: all .2s;
+                        -webkit-transition: all .2s;
+                        transition: all .2s;
+                        border-bottom: 3px solid transparent;
+                        text-transform: capitalize;
+
+                        &:hover {
+                            color: @CPWhite;
+                            border-bottom-color: @CBBelizeHole;
+                        }
+
+                        &.active {
+                            border-bottom-color: @CLClouds;
+                        }
+                    }
+
+                    &.img-btn {
+                        a {
+                            padding: 13px 12px;
+                            opacity: .8;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+
+                            span {
+                                display: block;
+                                @size: 16px;
+                                height: @size;
+                                width: @size;
+                                background-size: @size @size;
+
+                                &.logout {
+                                    background-image: url(../img/logout.png);
+                                }
+
+                                &.search {
+                                    background-image: url(../img/search.png);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.center {
+    .center-it();
+
+    .container.search {
+        .row {
+            &.row1 {
+                margin-bottom: 25px;
+
+                span {
+                    float: left;
+                    width: 250px;
+                    line-height: 36px;
+                }
+
+                .key {
+                    display: inline-block;
+                    width: 300px;
+                    height: 36px;
+                    background-color: @CPWhite;
+                    box-shadow: 0 0 2px @CLSilver;
+                    padding: 6px 20px 6px 40px;
+                    background-image: url(../img/search-d.png);
+                    background-position: 12px center;
+                    background-size: 16px 16px;
+                    background-repeat: no-repeat;
+                    border-bottom: 2px solid @CLClouds;
+
+                    &:focus {
+                        border-bottom-color: @CBPeterRiver;
+                    }
+                }
+            }
+
+            &.row2, &.row3 {
+                .block-div();
+                margin-bottom: 25px;
+                display: flex;
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+
+                .title {
+                    .block-title();
+                    width: 100%;
+                    margin-bottom: 12px;
+                }
+
+                a {
+                    position: relative;
+                    width: 50%;
+                    padding: 12px;
+                    color: @CBPeterRiver;
+                    z-index: 0;
+                    box-shadow: 0 0 1px @CLClouds;
+
+                    &:hover, &:focus {
+                        box-shadow: 0 0 4px @CLSilver;
+                        z-index: 10;
+                    }
+
+                    &:active {
+                        box-shadow: 0 0 1px @CLClouds;
+                        background-color: @CBPeterRiver;
+                        color: @CPWhite;
+                    }
+                }
+            }
+        }
+    }
+}

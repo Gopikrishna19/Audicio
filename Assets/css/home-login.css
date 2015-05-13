@@ -1,0 +1,79 @@
+﻿/*Bluish Green*/
+/*Yellowish Red*/
+/*Yellow*/
+/*Red*/
+/*Green*/
+/*Blue*/
+/*Violet*/
+/*Indigo*/
+/*Grey*/
+/*Light Grey*/
+/*Pure*/
+.block-div {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+}
+.flex {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex .block {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+  width: 600px;
+}
+.flex .block .title {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #3498db;
+  font-size: 20px;
+  font-weight: normal;
+}
+.flex .block p {
+  margin-bottom: 25px;
+}
+.flex .block .right {
+  text-align: right;
+}
+.flex .block .right .status {
+  display: inline-block;
+  margin-right: 12px;
+}
+.flex .block .right button {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.flex .block .right button[disabled] {
+  background-color: #ecf0f1;
+}
+.flex .block .right button[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.flex .block .right button:not([disabled]):hover,
+.flex .block .right button:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.flex .block .right button:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+/*# sourceMappingURL=home-login.css.map */

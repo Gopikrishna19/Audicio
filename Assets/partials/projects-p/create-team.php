@@ -1,13 +1,16 @@
 <div class="container create s1">
-    <div bread-heading="Create New Team" path="[['Project 3', 'home']]" hash="true"></div>
+    <div bread-heading="Create New Team" path="[['{{projectName}}', 'home']]" hash="true"></div>
     <div class="block">
-        <!--        <div class="title">Create New Team</div>-->
-        <div class="field"><span>Team Name:</span><input type="text" autofocus></div>
-        <div class="field"><span>Team Category:</span><input type="text" placeholder="Start typing for suggestions"></div>
-        <div class="field"><span>Description:</span><textarea></textarea></div>
+        <div class="field"><span>Team Name:</span><input type="text" autofocus ng-model="name"></div>
+        <div class="field"><span>Team Category:</span>
+            <select ng-model="catid">
+                <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+            </select>
+        </div>
+        <div class="field"><span>Description:</span><textarea ng-model="desc"></textarea></div>
         <div class="field">
             <span>&nbsp;</span>
-            <a class="btn" href="#/home">Create</a>
+            <button ng-click="doCreate()">Create</button>
             <a class="cancel" href="#/home">Cancel</a>
         </div>
     </div>

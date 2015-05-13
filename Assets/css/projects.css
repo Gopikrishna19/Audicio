@@ -33,7 +33,7 @@
   margin-top: 5px;
 }
 .header .content .menu-bar .menu li {
-  display: inline-block;
+  float: left;
 }
 .header .content .menu-bar .menu li a {
   text-align: center;
@@ -53,6 +53,25 @@
 }
 .header .content .menu-bar .menu li a.active {
   border-bottom-color: #ecf0f1;
+}
+.header .content .menu-bar .menu li.img-btn a {
+  padding: 13px 12px;
+  opacity: .8;
+}
+.header .content .menu-bar .menu li.img-btn a:hover {
+  opacity: 1;
+}
+.header .content .menu-bar .menu li.img-btn a span {
+  display: block;
+  height: 16px;
+  width: 16px;
+  background-size: 16px 16px;
+}
+.header .content .menu-bar .menu li.img-btn a span.logout {
+  background-image: url(../img/logout.png);
+}
+.header .content .menu-bar .menu li.img-btn a span.search {
+  background-image: url(../img/search.png);
 }
 .center {
   max-width: 1000px;
@@ -135,6 +154,13 @@
   font-size: 18px;
   margin-bottom: 12px;
 }
+.center .container.create .block .hint {
+  padding-left: 25px;
+  font-size: 13px;
+  color: #95a5a6;
+  font-weight: 100;
+  margin-bottom: 12px;
+}
 .center .container.create .block .field {
   padding: 6px 0;
 }
@@ -143,7 +169,8 @@
   width: 150px;
   line-height: 35px;
 }
-.center .container.create .block .field input {
+.center .container.create .block .field input,
+.center .container.create .block .field select {
   display: inline-block;
   width: 300px;
   height: 36px;
@@ -152,7 +179,8 @@
   padding: 4px 20px;
   border-bottom: 2px solid #ecf0f1;
 }
-.center .container.create .block .field input:focus {
+.center .container.create .block .field input:focus,
+.center .container.create .block .field select:focus {
   border-bottom-color: #3498db;
 }
 .center .container.create .block .field textarea {

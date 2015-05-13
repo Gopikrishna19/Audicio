@@ -1,7 +1,6 @@
-<div class="header" ng-controller="MainCtrl">
+<div class="header" ng-controller="HeadCtrl">
     <div class="content">
         <div class="controls">
-            <button class="skip" ng-click="next()">Skip</button>
             <button class="next" ng-click="next()">{{btnNext}}</button>
         </div>
         <div class="logo">Audicio</div>
@@ -12,5 +11,5 @@
         </ul>
     </div>
 </div>
-<div ng-view>
-</div>
+<div ng-view></div>
+<div class="wait-overlay"></div>

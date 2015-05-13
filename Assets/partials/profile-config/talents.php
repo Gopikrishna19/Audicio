@@ -9,8 +9,8 @@
                 <div ng-repeat="(sub, items) in cat" ng-if="sub != 'class'">
                     <div class="sub-title">{{sub}}</div>
                     <div class="entries">
-                        <div ng-repeat="item in items" class="col">
-                            <div item>{{item}}</div>
+                        <div ng-repeat="(id, item) in items" class="col">
+                            <div item id="{{id}}">{{item}}</div>
                         </div>
                     </div>
                 </div>

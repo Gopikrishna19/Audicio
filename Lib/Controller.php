@@ -2,11 +2,19 @@
     namespace Lib;
 
     class Controller{
-        public function __construct(){
+        public function __construct($login = true){
+            if($login == true) {
+                if(!Session::get("a_user_id")) {
+                    header("Location: /");
+                    die;
+                }
+            }
+
             $this->view = new View();
             $this->view->css[] = "master";
             $this->view->js[] = "jquery";
             $this->view->js[] = "moment";
+            $this->view->jsVar = [];
         }
 
         public function loadModel($controller){

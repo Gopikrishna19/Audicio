@@ -6,11 +6,10 @@
     </div>
     <div class="c c2">
         <div heading="My Projects"></div>
-        <div class="p"><a href="/projects/p/1">Project 1</a></div>
-        <div class="p"><a href="/projects/p/2">Project 2</a></div>
+        <div ng-repeat="c in created" class="p"><a ng-href="/projects/p/{{c.id}}">{{c.name}}</a></div>
     </div>
     <div class="c c2">
         <div heading="Committed to"></div>
-        <div class="p"><a href="/projects/p/3">Project 3</a></div>
+        <div ng-repeat="c in joined" class="p"><a ng-href="/projects/p/{{c.id}}">{{c.name}}</a></div>
     </div>
 </div>

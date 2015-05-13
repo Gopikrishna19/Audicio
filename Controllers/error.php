@@ -12,7 +12,7 @@
         );
 
         public function __construct($num = 404) {
-            parent::__construct();
+            parent::__construct(false);
             $this->num = $num;
         }
 
@@ -28,6 +28,7 @@
             //$this->view->renderView(__CLASS__,__FUNCTION__);
 
             echo $this->num.", ".$this->error_list[$this->num];
+            http_response_code($this->num);
         }
     }
 ?>

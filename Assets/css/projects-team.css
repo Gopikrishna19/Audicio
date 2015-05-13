@@ -21,6 +21,8 @@
   align-items: flex-start;
 }
 .center .container.home .block {
+  flex-grow: 1;
+  flex-basis: 60%;
   background-color: #ffffff;
   box-shadow: 0 0 5px #bdc3c7;
   padding: 25px;
@@ -65,7 +67,72 @@
 .center .container.home .block ul li a .name {
   display: block;
   text-align: center;
-  padding: 12px 0;
+  padding: 12px 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.center .container.settings .block .member {
+  padding: 6px;
+  box-shadow: 0 0 1px #ecf0f1;
+  overflow: auto;
+  position: relative;
+  -moz-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+}
+.center .container.settings .block .member:hover {
+  box-shadow: 0 0 3px #bdc3c7;
+  z-index: 25;
+}
+.center .container.settings .block .member img {
+  height: 36px;
+  width: 36px;
+  float: left;
+  margin-right: 25px;
+}
+.center .container.settings .block .member .name {
+  line-height: 36px;
+}
+.center .container.settings .block .member .btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  margin: 0;
+  margin-left: 12px;
+  float: right;
+}
+.center .container.settings .block .member .btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.settings .block .member .btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.settings .block .member .btn:not([disabled]):hover,
+.center .container.settings .block .member .btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.settings .block .member .btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.settings .block .member .btn.r:hover {
+  border-bottom-color: #c0392b;
 }
 .center .container.tasks .tasks {
   background-color: #ffffff;
@@ -92,25 +159,30 @@
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-.center .container.tasks .tasks .create .fields input {
+.center .container.tasks .tasks .create .fields input,
+.center .container.tasks .tasks .create .fields select {
   font-size: 16px;
   padding: 7px 12px;
   box-shadow: 0 0 2px #bdc3c7;
   border-bottom: 2px solid #ecf0f1;
 }
-.center .container.tasks .tasks .create .fields input:focus {
+.center .container.tasks .tasks .create .fields input:focus,
+.center .container.tasks .tasks .create .fields select:focus {
   border-bottom-color: #3498db;
 }
-.center .container.tasks .tasks .create .fields input.task-assign {
+.center .container.tasks .tasks .create .fields input.task-assign,
+.center .container.tasks .tasks .create .fields select.task-assign {
   -ms-flex: 0 1 200px;
   flex: 0 1 200px;
 }
-.center .container.tasks .tasks .create .fields input.task-input {
+.center .container.tasks .tasks .create .fields input.task-input,
+.center .container.tasks .tasks .create .fields select.task-input {
   -ms-flex: 1 1 200px;
   flex: 1 1 200px;
   margin-left: 25px;
 }
-.center .container.tasks .tasks .create .fields input.task-input:after {
+.center .container.tasks .tasks .create .fields input.task-input:after,
+.center .container.tasks .tasks .create .fields select.task-input:after {
   background-color: #ffffff;
   border-bottom: 2px solid #ecf0f1;
   box-shadow: 0 1px 4px #bdc3c7;
@@ -123,20 +195,25 @@
   transition: color 0.2s, box-shadow 0.2s, border 0.2s;
   content: "hello";
 }
-.center .container.tasks .tasks .create .fields input.task-input:after[disabled] {
+.center .container.tasks .tasks .create .fields input.task-input:after[disabled],
+.center .container.tasks .tasks .create .fields select.task-input:after[disabled] {
   background-color: #ecf0f1;
 }
-.center .container.tasks .tasks .create .fields input.task-input:after[disabled]:hover {
+.center .container.tasks .tasks .create .fields input.task-input:after[disabled]:hover,
+.center .container.tasks .tasks .create .fields select.task-input:after[disabled]:hover {
   border-bottom-color: #c0392b;
   cursor: not-allowed;
 }
 .center .container.tasks .tasks .create .fields input.task-input:after:not([disabled]):hover,
-.center .container.tasks .tasks .create .fields input.task-input:after:not([disabled]):focus {
+.center .container.tasks .tasks .create .fields select.task-input:after:not([disabled]):hover,
+.center .container.tasks .tasks .create .fields input.task-input:after:not([disabled]):focus,
+.center .container.tasks .tasks .create .fields select.task-input:after:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.tasks .tasks .create .fields input.task-input:after:not([disabled]):active {
+.center .container.tasks .tasks .create .fields input.task-input:after:not([disabled]):active,
+.center .container.tasks .tasks .create .fields select.task-input:after:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
@@ -194,7 +271,8 @@
   margin-right: 0;
   width: 0;
 }
-.center .container.tasks .tasks .create .fields.short input {
+.center .container.tasks .tasks .create .fields.short input,
+.center .container.tasks .tasks .create .fields.short select {
   -ms-flex: 0 1 0;
   flex: 0 1 0;
   padding: 7px 0;
@@ -320,5 +398,383 @@
 }
 .center .container.tasks .tasks .task.done .controls button.edit {
   display: none;
+}
+.center .container.auditions .block {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+.center .container.auditions .block .invite {
+  box-shadow: 0 0 2px #ecf0f1;
+  padding: 12px;
+}
+.center .container.auditions .block .invite .status {
+  font-style: italic;
+  color: #bdc3c7;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.center .container.auditions .block .invite button {
+  float: right;
+}
+.center .container.auditions .block .invite button.btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  margin: 0;
+  margin-right: 12px;
+}
+.center .container.auditions .block .invite button.btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.auditions .block .invite button.btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.auditions .block .invite button.btn:not([disabled]):hover,
+.center .container.auditions .block .invite button.btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.auditions .block .invite button.btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.auditions .block .invite button.cancel {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: 6px 12px;
+}
+.center .container.auditions .block .invite button.cancel i {
+  position: absolute;
+  height: 141.42135624%;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #7f8c8d;
+}
+.center .container.auditions .block .invite button.cancel i.x {
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.center .container.auditions .block .invite button.cancel i.xx {
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+.center .container.auditions .block .invite button.cancel:hover i {
+  background-color: #c0392b;
+}
+.center .container.auditions .block .invite a {
+  line-height: 36px;
+  color: #3498db;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.center .container.auditions .block .invite a:hover {
+  border-bottom: 1px dotted;
+}
+.center .container.auditions .block .title {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.center .container.auditions .block .audition {
+  box-shadow: 0 0 2px #ecf0f1;
+  overflow: auto;
+  padding: 12px;
+}
+.center .container.auditions .block .audition .btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  margin: 0;
+  margin-left: 12px;
+  float: right;
+}
+.center .container.auditions .block .audition .btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.auditions .block .audition .btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.auditions .block .audition .btn:not([disabled]):hover,
+.center .container.auditions .block .audition .btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.auditions .block .audition .btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.auditions .block .audition span {
+  line-height: 36px;
+}
+.center .container.auditions .block .audition span.count {
+  float: right;
+  color: #bdc3c7;
+  font-size: 14px;
+  font-style: italic;
+  margin-right: 25px;
+  cursor: default;
+}
+.center .container.auditions .block .audition span.count:hover {
+  text-decoration: underline;
+}
+.center .container.auditions .block .audition a.name {
+  line-height: 36px;
+  color: #3498db;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.center .container.auditions .block .audition a.name:hover {
+  border-bottom: 1px dotted;
+}
+.center .container.audition .block {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+.center .container.audition .block > .title {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.center .container.audition .block .gact {
+  text-align: right;
+}
+.center .container.audition .block .gact button {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+}
+.center .container.audition .block .gact button[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.audition .block .gact button[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.audition .block .gact button:not([disabled]):hover,
+.center .container.audition .block .gact button:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.audition .block .gact button:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.audition .block .candidate {
+  box-shadow: 0 0 2px #ecf0f1;
+  padding: 12px;
+}
+.center .container.audition .block .candidate .status {
+  font-style: italic;
+  color: #bdc3c7;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.center .container.audition .block .candidate button {
+  float: right;
+}
+.center .container.audition .block .candidate button.btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  margin: 0;
+  margin-right: 12px;
+}
+.center .container.audition .block .candidate button.btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.audition .block .candidate button.btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.audition .block .candidate button.btn:not([disabled]):hover,
+.center .container.audition .block .candidate button.btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.audition .block .candidate button.btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.audition .block .candidate button.cancel {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: 6px 12px;
+}
+.center .container.audition .block .candidate button.cancel i {
+  position: absolute;
+  height: 141.42135624%;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #7f8c8d;
+}
+.center .container.audition .block .candidate button.cancel i.x {
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.center .container.audition .block .candidate button.cancel i.xx {
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+.center .container.audition .block .candidate button.cancel:hover i {
+  background-color: #c0392b;
+}
+.center .container.audition .block .candidate a {
+  line-height: 36px;
+  color: #3498db;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.center .container.audition .block .candidate a:hover {
+  border-bottom: 1px dotted;
+}
+.center .container.invite .block .invite {
+  box-shadow: 0 0 2px #ecf0f1;
+  padding: 12px;
+}
+.center .container.invite .block .invite .status {
+  font-style: italic;
+  color: #bdc3c7;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.center .container.invite .block .invite button {
+  float: right;
+}
+.center .container.invite .block .invite button.btn {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ecf0f1;
+  box-shadow: 0 1px 4px #bdc3c7;
+  margin: 12px auto;
+  padding: 8px 12px;
+  cursor: pointer;
+  -moz-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  -webkit-transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, border 0.2s;
+  margin: 0;
+  margin-right: 12px;
+}
+.center .container.invite .block .invite button.btn[disabled] {
+  background-color: #ecf0f1;
+}
+.center .container.invite .block .invite button.btn[disabled]:hover {
+  border-bottom-color: #c0392b;
+  cursor: not-allowed;
+}
+.center .container.invite .block .invite button.btn:not([disabled]):hover,
+.center .container.invite .block .invite button.btn:not([disabled]):focus {
+  color: #000000;
+  border-bottom-color: #3498db;
+  box-shadow: 0 2px 5px #bdc3c7;
+}
+.center .container.invite .block .invite button.btn:not([disabled]):active {
+  color: #ffffff;
+  background-color: #3498db;
+  box-shadow: 0 0 3px #bdc3c7;
+}
+.center .container.invite .block .invite button.cancel {
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: 6px 12px;
+}
+.center .container.invite .block .invite button.cancel i {
+  position: absolute;
+  height: 141.42135624%;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #7f8c8d;
+}
+.center .container.invite .block .invite button.cancel i.x {
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.center .container.invite .block .invite button.cancel i.xx {
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+.center .container.invite .block .invite button.cancel:hover i {
+  background-color: #c0392b;
+}
+.center .container.invite .block .invite a {
+  line-height: 36px;
+  color: #3498db;
+  font-weight: bold;
+  margin-left: 12px;
+}
+.center .container.invite .block .invite a:hover {
+  border-bottom: 1px dotted;
 }
 /*# sourceMappingURL=projects-team.css.map */

@@ -46,6 +46,12 @@
             $url = isset($_GET['url']) ? $_GET['url'] : self::$_home;
             $url = trim($url, '/');
             $url = explode('/', $url);
+
+            $p = preg_match('/^@([0-9]*)/', $url[0], $port);
+            if($p) {
+                $port = $port[1];
+                $url = ["portfolio", "index", $port];
+            }
     
             $this->_url = $url;
         }
