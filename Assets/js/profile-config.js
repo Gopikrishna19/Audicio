@@ -88,7 +88,7 @@ app.controller('ProfileCtrl', function ($scope, $rootScope) {
         var file = photoPick[0].files.length > 0 ? photoPick[0].files[0] : null;
         if (file) {
             showWait();
-            var ext = file.name.split(".").slice(-1);
+            var ext = "." + file.name.split(".").slice(-1);
             uploadFile(file, 'image-1' + ext, function (p) {
                 if (p >= 100) {
                     steps[0] = true;
