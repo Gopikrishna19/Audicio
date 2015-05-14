@@ -54,6 +54,7 @@
             }
     
             $this->_url = $url;
+            print_r($url);
         }
     }
 ?>
