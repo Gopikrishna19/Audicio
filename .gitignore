@@ -43,4 +43,8 @@ Temporary Items
 .apdisk
 
 # website configs
-Config.php
+Config.php
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
