@@ -1,11 +1,8 @@
 <?php
+    include "Config.php";
+
     $msg = file_get_contents('php://input');
     $msg = json_decode($msg);
-
-    define("DB_HOST", "mydbinstance.cj6mavfxam3w.us-east-1.rds.amazonaws.com");
-    define("DB_NAME", "audicio");
-    define("DB_USER", "admin");
-    define("DB_PASS", "adminadmin");
 
 	$row = $msg->Records[0]->s3->object->key;
 	$type = explode("/",$row)[1];

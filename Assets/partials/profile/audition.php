@@ -2,7 +2,7 @@
     <div class="entries">
         <div class="entry ons">
             <div class="title"><a class="audition" href="#/audition/{{aud.id}}">{{a.title}}</a></div>
-            <audi-meta m-post="{{toNiceDate(aud.createdate)}}" m-by="{{aud.uname}}" m-on="{{toNiceDate(aud.schedule)}}"
+            <audi-meta m-post="{{toNiceDate(aud.createdate)}}" m-by="{{aud.uname}}" m-on="{{toNiceDateTime(aud.schedule)}}"
                        m-loc="{{aud.location}}" m-type="{{aud.cat}}" col="1"></audi-meta>
             <div class="description">
                 <p>{{aud.desc}}</p>

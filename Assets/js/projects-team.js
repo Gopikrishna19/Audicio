@@ -248,7 +248,8 @@ app.controller('AudiNewCtrl', function ($scope, $http, $location, team) {
 
         $http.post('/projects/createAudition', audi)
             .success(function (e) {
-                $location.path("/auditions").replace()
+                console.log(e);
+                //$location.path("/auditions").replace()
             })
     }
 });

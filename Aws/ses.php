@@ -1,11 +1,16 @@
 <?php
+
 function sendEmail($to, $subject, $body) {
     include_once "sdk.php";
 
     $client = $aws->get('Ses');
 
+    $msg = "<h1 style='color:#3498db'>";
+    $msg .= "<img src='http://audicio-s3-bucket.s3.amazonaws.com/assets/logo.png' alt='Audicio'></h1>";
+    $body = $msg.$body;
+
     $msg = array();
-    $msg['Source'] = "sandalblack19@gmail.com";
+    $msg['Source'] = "Audicio <sandalblack19@gmail.com>";
 
     $msg['Destination']['ToAddresses'] = $to;
 

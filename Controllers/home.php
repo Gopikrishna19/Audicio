@@ -105,8 +105,6 @@
             include_once "Aws/ses.php";
             $link = Audicio."/home/verify/".base64_encode($email);
             $msg  = "";
-            $msg .= "<h1 style='color:#3498db'>";
-            $msg .= "<img src='http://audicio-s3-bucket.s3.amazonaws.com/assets/logo.png' alt='Audicio'></h1>";
             $msg .= "<h3>Welcome to Audicio</h3>";
             $msg .= "<p>We welcome you to experience Audicio. You are one click away.</p>";
             $msg .= "<p>Please click <a href='$link'>here</a> to verify your email address";

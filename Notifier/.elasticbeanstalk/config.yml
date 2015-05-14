@@ -1,0 +1,10 @@
+branch-defaults:
+  default:
+    environment: audicio-notifier
+global:
+  application_name: Audicio
+  default_ec2_keyname: GopiAWS
+  default_platform: 64bit Amazon Linux 2015.03 v1.3.2 running PHP 5.6
+  default_region: us-west-2
+  profile: eb-cli
+  sc: null

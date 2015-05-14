@@ -113,6 +113,10 @@
             $this->db->update("audition", $data, "id = $id");
         }
 
+        public function getAuditionId($candidate) {
+            return $this->db->select("select audid from candidate where id = :id", [":id" => $candidate])[0]['audid'];
+        }
+
         public function getAuditions($team) {
             return $this->db->select("select id, title, (SELECT COUNT(*) from candidate where audid = a.id) as cnum ".
                 "from audition a where teamid = :teamid", [":teamid" => $team]);

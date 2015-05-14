@@ -135,7 +135,9 @@
             $data = json_decode(file_get_contents("php://input"), true);
             unset($data['done']);
             unset($data['person']);
-            echo $this->model->createtask($data);
+            $id = $this->model->createTask($data);
+            sendMessage(json_encode(["type" => "new-task", "id" => $id, "user" => $data['assignid']]));
+            echo $id;
         }
 
         public function getTeamTasks($team) {
@@ -155,7 +157,9 @@
 
         public function createAudition() {
             $data = json_decode(file_get_contents("php://input"), true);
-            echo $this->model->createAudition($data);
+            $id =  $this->model->createAudition($data);
+            sendMessage(json_encode(["type" => "new-audition", "id" => $id]));
+            echo $id;
         }
 
         public function updateAudition() {
@@ -163,6 +167,7 @@
             $id = $data['id'];
             unset($data['id']);
             $this->model->updateAudition($id, $data);
+            sendMessage(json_encode(["type" => "audition-info b", "audid" => $id]));
         }
 
         public function getAuditions($team) {
@@ -179,15 +184,21 @@
             $candidate = $data->candidate;
             $team = $data->team;
             $user = $data->user;
+            $audid = $this->model->getAuditionId($candidate);
 
             switch($status) {
                 case 3:
                     $this->inviteCandidate($user, $team);
+                    $this->model->deleteCandidate($candidate);
+                    sendMessage(json_encode(["type" => "invite", "audid" => $audid, "teamid" => $team, "userid" => $user]));
+                    break;
                 case 0:
                     $this->model->deleteCandidate($candidate);
+                    sendMessage(json_encode(["type" => "audition-info r", "audid" => $audid, "userid" => $user]));
                     break;
                 default:
                     $this->model->updateCandidate($candidate, $status);
+                    sendMessage(json_encode(["type" => "audition-info g", "audid" => $audid, "userid" => $user]));
             }
         }
 

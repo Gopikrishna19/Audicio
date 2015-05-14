@@ -3,7 +3,7 @@
         <div ng-repeat="a in auditions" ng-class="a.class" class="entry">
             <div class="timestamp">on {{toNiceDate(a.createdate)}}</div>
             <div class="title"><a class="audition" ng-href="#/audition/{{a.id}}">{{a.title}}</a></div>
-            <audi-meta m-on="{{toNiceDate(a.schedule)}}" m-by="{{a.uname}}" m-loc="{{a.location}}" m-type="{{a.cat}}"></audi-meta>
+            <audi-meta m-on="{{toNiceDateTime(a.schedule)}}" m-by="{{a.uname}}" m-loc="{{a.location}}" m-type="{{a.cat}}"></audi-meta>
         </div>
 <!--        <div class="more">Load More</div>-->
     </div>

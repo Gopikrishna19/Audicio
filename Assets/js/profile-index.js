@@ -356,7 +356,7 @@ app.controller('HeadCtrl', function ($scope, $location) {
     img.src = profileimg;
 })
 
-app.controller('NewsCtrl', function ($scope) {
+app.controller('NewsCtrl', function ($scope, notifications, invites) {
     var all = true, m;
     $scope.filters = [['All'], ['Audition', 'aud'], ['User', 'usr'], ['Project', 'prj'], ['General', 'not']];
     $scope.isOn = [];
@@ -388,7 +388,8 @@ app.controller('NewsCtrl', function ($scope) {
 
 app.controller('ApplyCtrl', function ($scope, $http, audition) {
     $scope.aud = audition.data[0];
-    $scope.toNiceDate = function (d) { return moment(d).format('LL HH:mm a') }
+    $scope.toNiceDate = function (d) { return moment(d).format('LL') }
+    $scope.toNiceDateTime = function (d) { return moment(d).format('LL HH:mm a') }
     $http.get('/profile/getAuditionStatus/' + $scope.aud.id + '/' + a_user_id)
         .success(function (e) {
             $scope.status = e;
@@ -405,7 +406,8 @@ app.controller('ApplyCtrl', function ($scope, $http, audition) {
 
 app.controller('AudiCtrl', function ($scope, categories, auditions) {
     $scope.auditions = auditions.data;
-    $scope.toNiceDate = function (d) { return moment(d).format('LL HH:mm a') }
+    $scope.toNiceDate = function (d) { return moment(d).format('LL') }
+    $scope.toNiceDateTime = function (d) { return moment(d).format('LL HH:mm a') }
     var all = true, m;
     $scope.filters = function () {
         var arr = [['All']]
