@@ -10,7 +10,7 @@
     
         public function renderView($controller, $filename='index', $masterpage = TRUE){
             $this->controller = $controller;
-            $view = "Views/".$controller."/".$filename.".php";
+            $view = "Views/".strtolower($controller)."/".$filename.".php";
             if(!file_exists($view)){
                 $error = new \Error(503);
                 $error->index();
