@@ -5,12 +5,12 @@
         public $css = array();
         public $js = array();
     
-        private $header = "Views/master/header.php";
-        private $footer = "Views/master/footer.php";
+        private $header = "/Views/master/header.php";
+        private $footer = "/Views/master/footer.php";
     
         public function renderView($controller, $filename='index', $masterpage = TRUE){
             $this->controller = $controller;
-            $view = "Views/".$controller."/".$filename.".php";
+            $view = "/Views/".$controller."/".$filename.".php";
             if(!file_exists($view)){
                 $error = new \Error(503);
                 $error->index();

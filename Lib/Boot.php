@@ -44,7 +44,7 @@
     
         function getUrl() {
             print_r($_GET);
-            
+
             $url = isset($_GET['url']) ? $_GET['url'] : self::$_home;
             $url = trim($url, '/');
             $url = explode('/', $url);
