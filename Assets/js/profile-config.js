@@ -135,7 +135,7 @@ app.controller('ProfileCtrl', function ($scope, $rootScope) {
 
         if (upass.val().trim() != "" || cpass.val().trim() != "") {
             var up = upass.val(), cp = cpass.val();
-            if (up.length > 6) {
+            if (up.length >= 6) {
                 $(".sp", errb).removeClass("on");
                 if (/(?=\S*?[A-Za-z])(?=\S*?[0-9])\S{6,}/.test(up)) {
                     $(".ip", errb).removeClass("on");

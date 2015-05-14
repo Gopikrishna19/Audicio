@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: encoder-work
+    environment: audicio-encoder
 global:
   application_name: Audicio
   default_ec2_keyname: GopiAWS
