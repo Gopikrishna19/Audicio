@@ -86,7 +86,7 @@ app.controller('ProfileSettingsCtrl', function ($scope, $http) {
             "\n Your personal files and details will be completely deleted" +
             "\n This process is irreverible !!")) {
             $http.get('/profile/deleteProfile/' + a_user_id)
-                .success(function (e) {                    
+                .success(function (e) {
                     window.location.href = "/home/logout";
                 });
         }
@@ -356,9 +356,25 @@ app.controller('HeadCtrl', function ($scope, $location) {
     img.src = profileimg;
 })
 
-app.controller('NewsCtrl', function ($scope, notifications, invites) {
+app.controller('NewsCtrl', function ($scope, $http) {
+    $scope.invites = [];
+    
+    $scope.accept = function (id) { $http.get('/profile/acceptInvite/' + id).success(function (e) { console.log(e); removeInvite(id); }) }
+    $scope.decline = function (id) { $http.get('/profile/declineInvite/' + id).success(function (e) { console.log(e); removeInvite(id); }) }
+
+    function findInviteById(id) { for (var t = $scope.invites, i = 0 ; i < t.length; ++i) if (t[i].id == id) return i; }
+    function removeInvite(id) { $scope.invites.splice(findInviteById(id), 1); }
+
+    function getNews() {
+        $http.get('/profile/getInvites/' + a_user_id).success(function (e) { $scope.invites = e });
+        $http.get('/profile/getNotifications/' + a_user_id).success(function (e) { $scope.notify = e });
+    }
+
+    setInterval(getNews, 10000);
+    getNews();
+
     var all = true, m;
-    $scope.filters = [['All'], ['Audition', 'aud'], ['User', 'usr'], ['Project', 'prj'], ['General', 'not']];
+    $scope.filters = [['All'], ['Audition', 'aud'], ['Project', 'prj'], ['General', 'not']]; // ['User', 'usr'],
     $scope.isOn = [];
     $scope.updateOn = function (i) {
         if (i == 0) {

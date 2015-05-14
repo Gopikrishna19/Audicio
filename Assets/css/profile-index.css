@@ -319,6 +319,53 @@ a:active {
 .center > * > .container > .entries .more:active {
   box-shadow: 0 0 2px -1px #95a5a6;
 }
+.center > * > .container > .entry-holder {
+  width: 70%;
+}
+.center > * > .container > .entry-holder .entries {
+  width: 70%;
+  width: 100%;
+}
+.center > * > .container > .entry-holder .entries .entry {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #bdc3c7;
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-position: 12px 12px;
+  background-size: 32px 32px;
+  margin-bottom: 25px;
+}
+.center > * > .container > .entry-holder .entries .entry .title a {
+  color: #3498db;
+}
+.center > * > .container > .entry-holder .entries .entry .title a:hover {
+  color: #2980b9;
+}
+.center > * > .container > .entry-holder .entries .entry.hide {
+  display: none;
+}
+.center > * > .container > .entry-holder .entries .entry .timestamp {
+  font-size: 12px;
+  color: #95a5a6;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(149, 165, 166, 0.4);
+}
+.center > * > .container > .entry-holder .entries .more {
+  order: 2;
+  border: 1px solid rgba(127, 140, 141, 0.25);
+  background-color: rgba(236, 240, 241, 0.25);
+  text-align: center;
+  padding: 12px 25px;
+  margin-bottom: 50px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.center > * > .container > .entry-holder .entries .more:hover {
+  box-shadow: 0 1px 3px -1px #95a5a6;
+}
+.center > * > .container > .entry-holder .entries .more:active {
+  box-shadow: 0 0 2px -1px #95a5a6;
+}
 .center > * > .container .sidebar {
   margin-left: 2.5%;
   width: 27.5%;
@@ -343,68 +390,75 @@ a:active {
 .center > * > .container .sidebar.filter li.on {
   background-image: url(../img/check/y.png);
 }
-.center .container.news .entries .entry {
+.center .container.news .entry-holder .entries {
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+.center .container.news .entry-holder .entries .entry {
+  order: 1;
   padding: 12px 25px 12px 55px;
 }
-.center .container.news .entries .entry .timestamp {
+.center .container.news .entry-holder .entries .entry .timestamp {
   font-size: 12px;
   color: #95a5a6;
   margin-bottom: 12px;
   border-bottom: 1px solid rgba(149, 165, 166, 0.4);
 }
-.center .container.news .entries .entry.new-audition {
+.center .container.news .entry-holder .entries .entry.new-audition {
   background-image: url(../img/new-audit.png);
 }
-.center .container.news .entries .entry.audition-info,
-.center .container.news .entries .entry.audition-info.b {
+.center .container.news .entry-holder .entries .entry.audition-info,
+.center .container.news .entry-holder .entries .entry.audition-info.b {
   background-image: url(../img/info/b.png);
 }
-.center .container.news .entries .entry.audition-info.r {
+.center .container.news .entry-holder .entries .entry.audition-info.r {
   background-image: url(../img/info/r.png);
 }
-.center .container.news .entries .entry.audition-info.g {
+.center .container.news .entry-holder .entries .entry.audition-info.g {
   background-image: url(../img/info/g.png);
 }
-.center .container.news .entries .entry.audition-info .title {
+.center .container.news .entry-holder .entries .entry.audition-info .title {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 15px;
 }
-.center .container.news .entries .entry.user-update {
+.center .container.news .entry-holder .entries .entry.user-update {
   background-image: url(../img/user.png);
 }
-.center .container.news .entries .entry.user-update .title {
+.center .container.news .entry-holder .entries .entry.user-update .title {
   margin-bottom: 12px;
 }
-.center .container.news .entries .entry.user-update .content {
+.center .container.news .entry-holder .entries .entry.user-update .content {
   border: 5px solid #ffffff;
   box-shadow: 0 0 5px #bdc3c7;
   background-color: #eaf4fb;
   height: 300px;
   margin-bottom: 12px;
 }
-.center .container.news .entries .entry.new-task {
+.center .container.news .entry-holder .entries .entry.new-task {
   background-image: url(../img/task.png);
 }
-.center .container.news .entries .entry.new-task .title {
+.center .container.news .entry-holder .entries .entry.new-task .title {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 15px;
 }
-.center .container.news .entries .entry.invite {
+.center .container.news .entry-holder .entries .entry.invite {
+  order: 0;
   background-image: url(../img/invite.png);
 }
-.center .container.news .entries .entry.invite .options {
+.center .container.news .entry-holder .entries .entry.invite .options {
   height: 30px;
   margin-bottom: 12px;
 }
-.center .container.news .entries .entry.invite .options button {
+.center .container.news .entry-holder .entries .entry.invite .options button {
   float: right;
   line-height: 30px;
   font-size: 14px;
   font-weight: bold;
 }
-.center .container.news .entries .entry.invite .options button.accept {
+.center .container.news .entry-holder .entries .entry.invite .options button.accept {
   background-color: #ffffff;
   border-bottom: 2px solid #ecf0f1;
   box-shadow: 0 1px 4px #bdc3c7;
@@ -419,41 +473,41 @@ a:active {
   padding: 0 12px;
   color: #7f8c8d;
 }
-.center .container.news .entries .entry.invite .options button.accept[disabled] {
+.center .container.news .entry-holder .entries .entry.invite .options button.accept[disabled] {
   background-color: #ecf0f1;
 }
-.center .container.news .entries .entry.invite .options button.accept[disabled]:hover {
+.center .container.news .entry-holder .entries .entry.invite .options button.accept[disabled]:hover {
   border-bottom-color: #c0392b;
   cursor: not-allowed;
 }
-.center .container.news .entries .entry.invite .options button.accept:not([disabled]):hover,
-.center .container.news .entries .entry.invite .options button.accept:not([disabled]):focus {
+.center .container.news .entry-holder .entries .entry.invite .options button.accept:not([disabled]):hover,
+.center .container.news .entry-holder .entries .entry.invite .options button.accept:not([disabled]):focus {
   color: #000000;
   border-bottom-color: #3498db;
   box-shadow: 0 2px 5px #bdc3c7;
 }
-.center .container.news .entries .entry.invite .options button.accept:not([disabled]):active {
+.center .container.news .entry-holder .entries .entry.invite .options button.accept:not([disabled]):active {
   color: #ffffff;
   background-color: #3498db;
   box-shadow: 0 0 3px #bdc3c7;
 }
-.center .container.news .entries .entry.invite .options button.decline {
+.center .container.news .entry-holder .entries .entry.invite .options button.decline {
   color: #e74c3c;
   cursor: pointer;
 }
-.center .container.news .entries .entry.invite .options button.decline:hover,
-.center .container.news .entries .entry.invite .options button.decline:focus {
+.center .container.news .entry-holder .entries .entry.invite .options button.decline:hover,
+.center .container.news .entry-holder .entries .entry.invite .options button.decline:focus {
   text-decoration: underline;
   color: #c0392b;
 }
-.center .container.news .entries .entry.notify,
-.center .container.news .entries .entry.notify.b {
+.center .container.news .entry-holder .entries .entry.notify,
+.center .container.news .entry-holder .entries .entry.notify.b {
   background-image: url(../img/notify/b.png);
 }
-.center .container.news .entries .entry.notify.r {
+.center .container.news .entry-holder .entries .entry.notify.r {
   background-image: url(../img/notify/r.png);
 }
-.center .container.news .entries .entry.notify.g {
+.center .container.news .entry-holder .entries .entry.notify.g {
   background-image: url(../img/notify/g.png);
 }
 .center .container.auditions .entries,

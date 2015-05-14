@@ -1,5 +1,6 @@
 <?php
     include "Config.php";
+    include "Aws/sqs.php";
 
     $msg = file_get_contents('php://input');
     $msg = json_decode($msg);
@@ -38,6 +39,8 @@
 
         @unlink("source/".$iname);
         @unlink("dest/".$fname.".mp4");
+
+        sendMessage(json_encode(["type" => "notify g", "id" => $id]));
 	} else if($type == "image" && isset($farr[1]) && $farr[1] != null) {
         $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
         $st = $db->prepare("insert into image(userid, ext) values(:userid, :ext)");

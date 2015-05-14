@@ -91,7 +91,7 @@ switch($msg->type) {
         } else {
             $email = $db->select("select email from user where id = :userid", [":userid" => $user])[0]['email'];
             $body = "<h3>Team Update</h3>";
-            $body .= "<p>A new task <b>$task</b>has been assigned to you</p>";
+            $body .= "<p>A new task has been assigned to you</p>";
             $body .= "<p>Please visit your projects for more details</p>";
             $body .= "<p style='margin-top: 25px'>Best, <br>Audicio Team</p>";
             $db->insert("notification", ["message" => json_encode($msg), "userid" => $user]);

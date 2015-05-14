@@ -277,6 +277,58 @@ a, a:link, a:visited, a:hover, a:active {
     }
 }
 
+.x-entries() {
+    width: 70%;
+
+    .entry {
+        .block-div();
+        background-repeat: no-repeat;
+        background-position: 12px 12px;
+        background-size: 32px 32px;
+        margin-bottom: 25px;
+
+        .title {
+            a {
+                color: @CBPeterRiver;
+
+                &:hover {
+                    color: @CBBelizeHole;
+                }
+            }
+        }
+
+        &.hide {
+            display: none;
+        }
+
+        .timestamp {
+            font-size: 12px;
+            color: @CGrConcrete;
+            margin-bottom: 12px;
+            border-bottom: 1px solid fade(@CGrConcrete, 40%);
+        }
+    }
+
+    .more {
+        order: 2;
+        border: 1px solid fade(@CGrAsbestos, 25%);
+        background-color: fade(@CLClouds, 25%);
+        text-align: center;
+        padding: 12px 25px;
+        margin-bottom: 50px;
+        font-size: 12px;
+        font-weight: bold;
+
+        &:hover {
+            box-shadow: 0 1px 3px -1px @CGrConcrete;
+        }
+
+        &:active {
+            box-shadow: 0 0 2px -1px @CGrConcrete;
+        }
+    }
+}
+
 .center {
     .center-it();
     position: relative;
@@ -304,54 +356,15 @@ a, a:link, a:visited, a:hover, a:active {
         align-items: flex-start;
 
         > .entries {
+            .x-entries();
+        }
+
+        > .entry-holder {
             width: 70%;
 
-            .entry {
-                .block-div();
-                background-repeat: no-repeat;
-                background-position: 12px 12px;
-                background-size: 32px 32px;
-                margin-bottom: 25px;
-
-                .title {
-                    a {
-                        color: @CBPeterRiver;
-
-                        &:hover {
-                            color: @CBBelizeHole;
-                        }
-                    }
-                }
-
-                &.hide {
-                    display: none;
-                }
-
-                .timestamp {
-                    font-size: 12px;
-                    color: @CGrConcrete;
-                    margin-bottom: 12px;
-                    border-bottom: 1px solid fade(@CGrConcrete, 40%);
-                }
-            }
-
-            .more {
-                order: 2;
-                border: 1px solid fade(@CGrAsbestos, 25%);
-                background-color: fade(@CLClouds, 25%);
-                text-align: center;
-                padding: 12px 25px;
-                margin-bottom: 50px;
-                font-size: 12px;
-                font-weight: bold;
-
-                &:hover {
-                    box-shadow: 0 1px 3px -1px @CGrConcrete;
-                }
-
-                &:active {
-                    box-shadow: 0 0 2px -1px @CGrConcrete;
-                }
+            .entries {
+                .x-entries();
+                width: 100%;
             }
         }
 
@@ -388,104 +401,112 @@ a, a:link, a:visited, a:hover, a:active {
     }
 }
 
-.center .container.news .entries {
-    .entry {
-        padding: 12px 25px 12px 55px;
+.center .container.news .entry-holder {
+    .entries {
+        display: flex;
+        -ms-flex-flow: column nowrap;
+        flex-flow: column nowrap;
 
-        .timestamp {
-            font-size: 12px;
-            color: @CGrConcrete;
-            margin-bottom: 12px;
-            border-bottom: 1px solid fade(@CGrConcrete, 40%);
-        }
+        .entry {
+            order: 1;
+            padding: 12px 25px 12px 55px;
 
-
-        &.new-audition {
-            background-image: url(../img/new-audit.png);
-        }
-
-        &.audition-info {
-            &, &.b {
-                background-image: url(../img/info/b.png);
-            }
-
-            &.r {
-                background-image: url(../img/info/r.png);
-            }
-
-            &.g {
-                background-image: url(../img/info/g.png);
-            }
-
-            .title {
+            .timestamp {
+                font-size: 12px;
+                color: @CGrConcrete;
                 margin-bottom: 12px;
-                font-weight: bold;
-                font-size: 15px;
-            }
-        }
-
-        &.user-update {
-            background-image: url(../img/user.png);
-
-            .title {
-                margin-bottom: 12px;
+                border-bottom: 1px solid fade(@CGrConcrete, 40%);
             }
 
-            .content {
-                .frame();
-                height: 300px;
-                margin-bottom: 12px;
+
+            &.new-audition {
+                background-image: url(../img/new-audit.png);
             }
-        }
 
-        &.new-task {
-            background-image: url(../img/task.png);
+            &.audition-info {
+                &, &.b {
+                    background-image: url(../img/info/b.png);
+                }
 
-            .title {
-                margin-bottom: 12px;
-                font-weight: bold;
-                font-size: 15px;
-            }
-        }
+                &.r {
+                    background-image: url(../img/info/r.png);
+                }
 
-        &.invite {
-            background-image: url(../img/invite.png);
+                &.g {
+                    background-image: url(../img/info/g.png);
+                }
 
-            .options {
-                height: 30px;
-                margin-bottom: 12px;
-
-                button {
-                    float: right;
-                    line-height: 30px;
-                    font-size: 14px;
+                .title {
+                    margin-bottom: 12px;
                     font-weight: bold;
+                    font-size: 15px;
+                }
+            }
 
-                    &.accept {
-                        .upload-btn();
-                        margin: 0 0 0 12px;
-                        padding: 0 12px;
-                        color: @CGrAsbestos;
-                    }
+            &.user-update {
+                background-image: url(../img/user.png);
 
-                    &.decline {
-                        .cancel-link();
+                .title {
+                    margin-bottom: 12px;
+                }
+
+                .content {
+                    .frame();
+                    height: 300px;
+                    margin-bottom: 12px;
+                }
+            }
+
+            &.new-task {
+                background-image: url(../img/task.png);
+
+                .title {
+                    margin-bottom: 12px;
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+            }
+
+            &.invite {
+                order: 0;
+                background-image: url(../img/invite.png);
+
+                .options {
+                    height: 30px;
+                    margin-bottom: 12px;
+
+                    button {
+                        float: right;
+                        line-height: 30px;
+                        font-size: 14px;
+                        font-weight: bold;
+
+                        &.accept {
+                            .upload-btn();
+                            margin: 0 0 0 12px;
+                            padding: 0 12px;
+                            color: @CGrAsbestos;
+                        }
+
+                        &.decline {
+                            .cancel-link();
+                        }
                     }
                 }
             }
-        }
 
-        &.notify {
-            &, &.b {
-                background-image: url(../img/notify/b.png);
-            }
+            &.notify {
+                &, &.b {
+                    background-image: url(../img/notify/b.png);
+                }
 
-            &.r {
-                background-image: url(../img/notify/r.png);
-            }
+                &.r {
+                    background-image: url(../img/notify/r.png);
+                }
 
-            &.g {
-                background-image: url(../img/notify/g.png);
+                &.g {
+                    background-image: url(../img/notify/g.png);
+                }
             }
         }
     }

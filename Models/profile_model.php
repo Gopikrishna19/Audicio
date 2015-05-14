@@ -85,5 +85,31 @@
         public function deleteProfile($user) {
             $this->db->delete("user", "id = $user");
         }
+
+        public function getInvites($user) {
+            return $this->db->select("select i.id, concat(u.fname, ' ', u.lname) as uname, u.id as uid, p.name as pname ".
+                "from invite i join team t on t.id = i.teamid join project p on p.id = t.prjid join user u ".
+                "on u.id = p.userid where i.userid = :id", [":id" => $user]);
+        }
+
+        public function acceptInvite($invite) {
+            $data = $this->db->select("select teamid, userid from invite where id = :id", [":id" => $invite])[0];
+            $this->db->insert("member", ["userid" => $data['userid'], "teamid" => $data['teamid']]);
+            $this->declineInvite($invite);
+        }
+
+        public function declineInvite($invite) {
+            $this->db->delete("invite", "id = $invite");
+        }
+
+        public function getNotifications($user) {
+            return $this->db->select("select * from notification where userid is NULL or userid = :id ".
+                "order by time desc limit 50", [":id" => $user]);
+        }
+
+        public function getTask($task) {
+            return $this->db->select("select t.*, p.id as pid, p.name as pname from task t join team m on m.id = t.teamid ".
+                "join project p on p.id = m.prjid where t.id = :id", [":id" => $task]);
+        }
     }
 ?>
