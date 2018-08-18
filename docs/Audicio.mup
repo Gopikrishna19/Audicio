@@ -1,0 +1,689 @@
+{
+  "title": "Audicio",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "1": {
+      "title": "register",
+      "id": 2,
+      "ideas": {
+        "2": {
+          "title": "verify email",
+          "id": 78,
+          "ideas": {
+            "1": {
+              "title": "config",
+              "id": 3,
+              "ideas": {
+                "1": {
+                  "title": "1. mark talents -- done",
+                  "id": 26,
+                  "attr": {
+                    "style": {
+                      "background": "#ff6600"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "2. add pictures -- done",
+                  "id": 27,
+                  "attr": {
+                    "style": {
+                      "background": "#ff6600"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "3. add videos -- done",
+                  "id": 28,
+                  "attr": {
+                    "style": {
+                      "background": "#ff6600"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "4. add talents -- done",
+                  "id": 29,
+                  "attr": {
+                    "style": {
+                      "background": "#ff6600"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {}
+              }
+            }
+          },
+          "attr": {
+            "position": [
+              55,
+              65.5,
+              1
+            ],
+            "style": {}
+          }
+        }
+      }
+    },
+    "11": {
+      "title": "login",
+      "id": 5,
+      "attr": {
+        "style": {},
+        "position": [
+          62,
+          154,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "profile\n/index",
+          "id": 6,
+          "attr": {
+            "style": {},
+            "position": [
+              214,
+              -4,
+              1
+            ]
+          },
+          "ideas": {
+            "1": {
+              "title": "#news",
+              "id": 7,
+              "ideas": {
+                "1": {
+                  "title": "public announcements",
+                  "id": 13,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "new auditions (follow)",
+                  "id": 16,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "new updates (follow)",
+                  "id": 17,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "new tasks (projects)",
+                  "id": 79,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "audition updates (selected/rejected etc)",
+                  "id": 80,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#808000"
+                },
+                "position": [
+                  63,
+                  -85.5,
+                  1
+                ]
+              }
+            },
+            "2": {
+              "title": "#auditions",
+              "id": 9,
+              "attr": {
+                "style": {
+                  "background": "#808000"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "new auditions (all)",
+                  "id": 18,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "recommend",
+                  "id": 19,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "filters",
+                  "id": 20,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "#projects",
+              "id": 11,
+              "ideas": {
+                "1": {
+                  "title": "created",
+                  "id": 22,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "link to projects",
+                      "id": 41
+                    }
+                  }
+                },
+                "2": {
+                  "title": "commited",
+                  "id": 23,
+                  "ideas": {
+                    "1": {
+                      "title": "link to  auditions",
+                      "id": 25,
+                      "attr": {
+                        "style": {
+                          "background": "transparent"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#808000"
+                }
+              }
+            },
+            "3.5": {
+              "title": "public\n/of/$id",
+              "id": 74,
+              "ideas": {
+                "1": {
+                  "title": "global (no signin) limited",
+                  "id": 81,
+                  "ideas": {}
+                },
+                "2": {
+                  "title": "public (signed in)",
+                  "id": 82
+                }
+              }
+            },
+            "3.25": {
+              "title": "#portfolio",
+              "id": 12,
+              "attr": {
+                "style": {
+                  "background": "#808000"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "pic/name",
+                  "id": 34,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#00CED1"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "pictures",
+                  "id": 35,
+                  "attr": {
+                    "style": {
+                      "background": "#33cccc"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "videos",
+                  "id": 36,
+                  "attr": {
+                    "style": {
+                      "background": "#00CED1"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "experience",
+                  "id": 37,
+                  "attr": {
+                    "style": {
+                      "background": "#00CED1"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "awards",
+                  "id": 38,
+                  "attr": {
+                    "style": {
+                      "background": "#00CED1"
+                    }
+                  }
+                },
+                "6": {
+                  "title": "talents",
+                  "id": 39,
+                  "attr": {
+                    "style": {
+                      "background": "#00CED1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "-1": {
+      "title": "About",
+      "id": 31,
+      "ideas": {}
+    },
+    "-2": {
+      "title": "team info",
+      "id": 33
+    },
+    "-12": {
+      "title": "projects",
+      "id": 40,
+      "attr": {
+        "position": [
+          74,
+          205,
+          2
+        ],
+        "style": {}
+      },
+      "ideas": {
+        "1": {
+          "title": "List Projects\n/index",
+          "id": 42,
+          "attr": {
+            "style": {}
+          },
+          "ideas": {
+            "1": {
+              "title": "Create",
+              "id": 45,
+              "attr": {
+                "style": {
+                  "background": "#00CED1"
+                }
+              }
+            },
+            "2": {
+              "title": "Open",
+              "id": 46,
+              "ideas": {
+                "1": {
+                  "title": "One Project\n/p/$id",
+                  "id": 49,
+                  "ideas": {
+                    "1": {
+                      "title": "list teams",
+                      "id": 50,
+                      "ideas": {
+                        "1": {
+                          "title": "create",
+                          "id": 53,
+                          "attr": {
+                            "position": [
+                              91,
+                              -99.25,
+                              1
+                            ],
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        },
+                        "1.5": {
+                          "title": "open",
+                          "id": 55,
+                          "ideas": {
+                            "1": {
+                              "title": "one team\n/team/$id",
+                              "id": 56,
+                              "ideas": {
+                                "1": {
+                                  "title": "list team members",
+                                  "id": 58,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "view profile",
+                                      "id": 59,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    },
+                                    "2": {
+                                      "title": "add",
+                                      "id": 60,
+                                      "ideas": {
+                                        "1": {
+                                          "title": "invite known",
+                                          "id": 62
+                                        },
+                                        "2": {
+                                          "title": "create audition",
+                                          "id": 63
+                                        }
+                                      },
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    },
+                                    "3": {
+                                      "title": "delete",
+                                      "id": 61,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "list tasks",
+                                  "id": 65,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "add",
+                                      "id": 66,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    },
+                                    "2": {
+                                      "title": "assign to members",
+                                      "id": 67,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    },
+                                    "3": {
+                                      "title": "delete",
+                                      "id": 68,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    },
+                                    "4": {
+                                      "title": "update",
+                                      "id": 69,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#00CED1"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        },
+                        "1.25": {
+                          "title": "delete",
+                          "id": 54,
+                          "attr": {
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "position": [
+                          106,
+                          -72,
+                          1
+                        ],
+                        "style": {
+                          "background": "transparent"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "milestone",
+                      "id": 51,
+                      "ideas": {
+                        "1": {
+                          "title": "update",
+                          "id": 71,
+                          "attr": {
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "modify",
+                          "id": 73,
+                          "attr": {
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        },
+                        "0.5": {
+                          "title": "add",
+                          "id": 76,
+                          "attr": {
+                            "style": {
+                              "background": "#00CED1"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "transparent"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Chat? have to think about",
+                      "id": 85,
+                      "attr": {
+                        "style": {
+                          "background": "#ff0000"
+                        },
+                        "attachment": {
+                          "contentType": "text/html",
+                          "content": "so far:<div>use js sdk to subscribe to sns: need to see docs</div><div>use sns to new msg</div><div>&nbsp; public: if all</div><div>&nbsp; private: to mem</div><div>msg struct: {to: 'all/{mem}', id: 'chatid', msg: 'message:base64?'}</div><div>better? 1 sqs = 1 chat &lt;= still use sns</div>"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#00CED1"
+                }
+              }
+            },
+            "0.5": {
+              "title": "Delete",
+              "id": 47,
+              "attr": {
+                "position": [
+                  94,
+                  -63.25,
+                  1
+                ],
+                "style": {
+                  "background": "#00CED1"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "links": [
+    {
+      "ideaIdFrom": 3,
+      "ideaIdTo": 12,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 5,
+      "ideaIdTo": 40,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 74,
+      "ideaIdTo": 12,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 59,
+      "ideaIdTo": 74,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 53,
+      "ideaIdTo": 60,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 2,
+      "ideaIdTo": 3,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 41,
+      "ideaIdTo": 40,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 25,
+      "ideaIdTo": 9,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    }
+  ],
+  "attr": {
+    "storyboards": [
+      "Storyboard 1"
+    ],
+    "style": {}
+  }
+}
